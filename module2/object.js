@@ -56,7 +56,6 @@ capAmerica.isAvenger = true;
 capAmerica.address.state = 'New York'
 console.log(capAmerica);
 
-
 //second method to access a key
 
 console.log(capAmerica.Name);
