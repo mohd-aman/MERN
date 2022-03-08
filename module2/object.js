@@ -24,4 +24,19 @@ let capAmerica = {
     }
 }
 
-console.log(capAmerica);
+//whole object
+// console.log(capAmerica);
+
+//name of capAmerica
+console.log(capAmerica.Name)
+//age of capAmerica
+console.log(capAmerica.Age);
+//friends of capAmerica
+console.log(capAmerica.Friends);
+console.log(capAmerica.Friends[0]);
+//address object
+console.log(capAmerica.address);
+console.log(capAmerica.address.city)
+
+// call fxn sayHi
+capAmerica.sayHi();
