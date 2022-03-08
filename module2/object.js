@@ -19,6 +19,7 @@ let capAmerica = {
         city:"Queens",
         state:'Haryana'
     },
+    isAvenger:false,
     sayHi:function(){
         console.log("Cap America says Hiiiii")
     }
@@ -40,3 +41,23 @@ console.log(capAmerica.address.city)
 
 // call fxn sayHi
 capAmerica.sayHi();
+
+
+console.log("object before update : ",capAmerica)
+// add a new key to object
+capAmerica.Movies = ['Avengers','Civil War','Endgame'];
+console.log("object after update : ",capAmerica);
+
+//delete a key 
+delete capAmerica.Movies;
+
+capAmerica.isAvenger = true;
+
+capAmerica.address.state = 'New York'
+console.log(capAmerica);
+
+
+//second method to access a key
+
+console.log(capAmerica.Name);
+console.log(capAmerica['Name']);
