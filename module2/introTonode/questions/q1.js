@@ -7,8 +7,8 @@ if(!fs.existsSync("newFolder")){
     fs.mkdirSync("newFolder");
 }
 
-let fileKaPath = path.join(__dirname,"newFolder","newFile.txt");
+let fileKaPath = path.join(__dirname,"newFolder","newFile.txt"); // responsible for path 
 console.log(fileKaPath);
 
-fs.writeFileSync(fileKaPath,"new file has been made");
+fs.writeFileSync(fileKaPath,"new file has been made"); // responsible create a file with content
 
