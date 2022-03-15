@@ -1,7 +1,7 @@
 // read content of unorganised folder and make  an array which has extension name of each file
 
 let fs = require("fs");
-const path = require("path");
+let path = require("path");
 
 let folderKaPath = path.join(__dirname,"..","unorganised");
 // console.log(folderKaPath);
