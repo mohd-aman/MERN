@@ -24,19 +24,19 @@ let path = require("path");
 
 //Create a directory
 
-// if(!fs.existsSync("hamariDirectory"))
-//     fs.mkdirSync("hamariDirectory");
+if(!fs.existsSync("hamariDirectory"))
+    fs.mkdirSync("hamariDirectory");
 
-// //Read a directory
+//Read a directory
 
-// let folderPath = __dirname;
+let folderPath = __dirname;
 
-// let contentOfFolder = fs.readdirSync(folderPath);
-// console.log(contentOfFolder);
+let contentOfFolder = fs.readdirSync(folderPath);
+console.log(contentOfFolder);
 
 //Delete a directory
 
-// fs.rmdirSync("hamariDirecotry")
+fs.rmdirSync("hamariDirectory")
 
 //copy a file 
 
