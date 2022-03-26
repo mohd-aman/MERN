@@ -12,5 +12,4 @@ function cb(error,data){
     }
 }
 
-
 console.log("After");
