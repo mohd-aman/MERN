@@ -11,6 +11,8 @@ function cb(error,response,html){
     }else{
         const dom = new JSDOM(html);
         const document =  dom.window.document;
+        let mostWicket = 0;
+        let nameOfHighestWicketTacker = "";
         let bowlersTable = document.querySelectorAll(".table.bowler");
         for(let i=0;i<bowlersTable.length;i++){
             let rows = bowlersTable[i].querySelectorAll("tbody tr");
@@ -19,9 +21,15 @@ function cb(error,response,html){
                 if(tds.length>1){
                     let name = tds[0].textContent;
                     let wicket = tds[4].textContent;
-                    console.log("Name of Bowler ---> ",name,"     Wickets ---> ",wicket);
+                    // console.log("Name of Bowler ---> ",name,"     Wickets ---> ",wicket);
+                    if(wicket>mostWicket){
+                        mostWicket = wicket;
+                        nameOfHighestWicketTacker = name;
+                    }
                 }
             }
         }
+        console.log("Name of Highest Wicket Taker : ",nameOfHighestWicketTacker);
+        console.log("Number of Wickets Taken      : ",mostWicket)
     }
 }
