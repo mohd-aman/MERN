@@ -9,9 +9,19 @@ function cb(error,response,html){
     if(error){
         console.log(error);
     }else{
-        console.log(html);
         const dom = new JSDOM(html);
         const document =  dom.window.document;
-        
+        let bowlersTable = document.querySelectorAll(".table.bowler");
+        for(let i=0;i<bowlersTable.length;i++){
+            let rows = bowlersTable[i].querySelectorAll("tbody tr");
+            for(let j=0;j<rows.length;j++){
+                let tds = rows[j].querySelectorAll("td");
+                if(tds.length>1){
+                    let name = tds[0].textContent;
+                    let wicket = tds[4].textContent;
+                    console.log("Name of Bowler ---> ",name,"     Wickets ---> ",wicket);
+                }
+            }
+        }
     }
 }
