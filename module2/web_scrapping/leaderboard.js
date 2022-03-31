@@ -45,9 +45,9 @@ function cb2(error,response,html){
     }
 }
 
-processPlayer('Rohit','15','4','2','4','0');
-processPlayer('Virat','50','20','4','3','3')
-processPlayer('Rohit','40','20','1','2','4');
+processPlayer('Rohit','15','4','2','4');
+processPlayer('Virat','50','20','4','3')
+processPlayer('Rohit','40','20','1','2');
 console.log(leaderboard);
 
 function processPlayer(name,runs,balls,fours,sixes){
