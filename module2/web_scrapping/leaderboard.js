@@ -1,10 +1,12 @@
 const request = require("request");
 const jsdom = require("jsdom");
 const { JSDOM } = jsdom;
+const fs = require("fs");
 
 const link = "https://www.espncricinfo.com/series/ipl-2021-1249214/match-results";
 
 let leaderboard = [];
+let counter = 0;
 
 request(link,cb);
 
@@ -20,6 +22,7 @@ function cb(error,response,html){
             let completeLink = "https://www.espncricinfo.com"+link;
             // console.log(completeLink);
             request(completeLink,cb2);
+            counter++;
         }
         // console.log("Line 24: ",leaderboard);
     }
@@ -44,7 +47,14 @@ function cb2(error,response,html){
                 processPlayer(name,runs,balls,fours,sixes);
             }
         }
-        // console.log("Line 46",leaderboard);
+        counter--;
+        if(counter == 0){
+            console.log(leaderboard);
+            let data = JSON.stringify(leaderboard);
+            fs.writeFileSync('BatsmenStats.json',data);
+
+
+        }
     }
 }
 
