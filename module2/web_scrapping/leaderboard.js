@@ -16,9 +16,11 @@ function cb(error,response,html){
     }else{
         const dom = new JSDOM(html);
         const document = dom.window.document;
-        let allScorecardTags = document.querySelectorAll('a[data-hover="Scorecard"]');
-        for(let i=0;i<allScorecardTags.length;i++){
-            let link = allScorecardTags[i].href;
+        let allScorecardTags = document.querySelectorAll('.ds-border-b.ds-border-line');
+        // console.log(allScorecardTags.length);
+        for(let i=0;i<60;i++){
+            let anchorTagAll = allScorecardTags[i].querySelectorAll("a");
+            let link = anchorTagAll[2].href;
             let completeLink = "https://www.espncricinfo.com"+link;
             // console.log(completeLink);
             request(completeLink,cb2);
@@ -34,7 +36,7 @@ function cb2(error,response,html){
     }else{
         const dom = new JSDOM(html);
         const document = dom.window.document;
-        let batsmenRow = document.querySelectorAll(".table.batsman tbody tr");
+        let batsmenRow = document.querySelectorAll('tbody [class="ds-border-b ds-border-line ds-text-tight-s"]');
         for(let i=0;i<batsmenRow.length;i++){
             let cells = batsmenRow[i].querySelectorAll("td");
             if(cells.length == 8){
@@ -52,8 +54,6 @@ function cb2(error,response,html){
             console.log(leaderboard);
             let data = JSON.stringify(leaderboard);
             fs.writeFileSync('BatsmenStats.json',data);
-
-
         }
     }
 }
