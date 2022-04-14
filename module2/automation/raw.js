@@ -13,5 +13,4 @@ let browserPromise = puppeteer.launch({ headless: false });
 
 browserPromise.then(function(browserInstance){
     console.log("Browser is opened");
-    let pagePromise = browserInstance.newPage();
 })
