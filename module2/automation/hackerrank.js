@@ -2,7 +2,7 @@ const puppeteer = require("puppeteer");
 const mail = "gavic76183@carsik.com";
 const pass = "abcdef";
 
-let browserPromise = puppeteer.launch({ headless: false });
+let browserPromise = puppeteer.launch({ headless: false, defaultViewport: null,args: ['--start-fullscreen'] });
 let page;
 browserPromise.then(function(browser){
     console.log("Browser is opened");
@@ -14,12 +14,7 @@ browserPromise.then(function(browser){
     let urlPromise = page.goto('https://www.hackerrank.com/');
     return urlPromise;
 }).then(function(){
-    console.log("Hackerrank page is opened");
-    let waitPromise = page.waitForSelector("ul.menu a");
-    return waitPromise;
-}).then(function(){
-    let clickPromse = page.click("ul.menu a");
-    return clickPromse;
+    return waitAndClick('ul.menu a');
 }).then(function(){
     let waitPromise = page.waitForSelector(".fl-module-content.fl-node-content .fl-button");
     return waitPromise;
@@ -43,13 +38,9 @@ browserPromise.then(function(browser){
     let clickPromse = page.click('button[data-analytics="LoginPassword"]');
     return clickPromse;
 }).then(function(){
-    console.log("Login successful hogya hai ")
-    let waitPromise = page.waitForSelector('[data-automation="algorithms"]');
-    return waitPromise;
-}).then(function(){
-    let clickPromise = page.click('[data-automation="algorithms"]');
-    return clickPromise;
-}).then(function(){
+    return waitAndClick('[data-automation="algorithms"]');
+})
+.then(function(){
     return page.waitForSelector(".filter-group");
 }).then(function(){
     let domSelectPromise = page.evaluate(function(){
@@ -66,3 +57,17 @@ browserPromise.then(function(browser){
 }).then(function(){
     
 })
+
+
+
+function waitAndClick(selector){
+    return new Promise(function(resolve,reject){
+        let waitPromise = page.waitForSelector(selector);
+        waitPromise.then(function(){
+            let clickPromise = page.click(selector);
+            return clickPromise;
+        }).then(function(){
+            resolve();
+        });
+    })
+}
