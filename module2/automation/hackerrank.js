@@ -53,9 +53,21 @@ browserPromise.then(function(browser){
     return domSelectPromise;
 }).then(function(){
     console.log("warmup Selected");
-    return page.waitForSelector('.ui-btn.ui-btn-normal.primary-cta.ui-btn-line-primary.ui-btn-styled');
+    return page.waitForSelector('.challenges-list .js-track-click.challenge-list-item');
 }).then(function(){
-    
+    let arrPromise = page.evaluate(function(){
+        let arr = [];
+        let aTags = document.querySelectorAll('.challenges-list .js-track-click.challenge-list-item');
+        for(let i=0;i<aTags.length;i++){
+            let link =  aTags[i].href;
+            console.log(link);
+            arr.push(link);
+        }
+        return arr;
+    })
+    return arrPromise;
+}).then(function(questionsArr){
+    console.log(questionsArr);
 })
 
 
