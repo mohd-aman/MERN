@@ -38,6 +38,9 @@ const code = require('./code');
         }
         return arr;
     })
+    for(let i=0;i<questionsArr.length;i++){
+        await questionSolver(questionsArr[i],code.answers[i],page);
+    }
 })();
 
 
@@ -46,6 +49,19 @@ async function waitAndClick(selector,page){
     await page.click(selector);
 }
 
-async function questionSolver(){
-    
+async function questionSolver(question,answer,page){
+    await page.goto(question);
+    await waitAndClick('.checkBoxWrapper input',page);
+    await waitAndClick('.ui-tooltip-wrapper textarea',page);
+    await page.type('.ui-tooltip-wrapper textarea',answer);
+    await page.keyboard.down('Control');
+    await page.keyboard.press('A');
+    await page.keyboard.press('X');
+    await page.keyboard.up('Control');
+    await waitAndClick('.monaco-editor.no-user-select.vs',page);
+    await page.keyboard.down('Control');
+    await page.keyboard.press('A');
+    await page.keyboard.press('V');
+    await page.keyboard.up("Control");
+    await waitAndClick('.ui-btn.ui-btn-normal.ui-btn-primary.pull-right.hr-monaco-submit.ui-btn-styled',page);
 }
