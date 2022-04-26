@@ -8,18 +8,25 @@
   </head>
   <body>
     <ul>
-      <li>1</li>
-      <li>2</li>
+      <li>1</li> <!-- 0th index -->
+      <li>2</li> <!-- 1th index -->
       <li>3</li>
       <li>4</li>
       <li>5</li>
       <li>6</li>
-      <li>8</li>
+      <li>8</li> <!-- 6th index -->
       <li>9</li>
       <li>10</li>
     </ul>
     <script>
       //insertBefore
+      let liTag = document.createElement("li");
+      liTag.innerText = '7';
+      let allLi = document.querySelectorAll("li");
+      let relevantLi = allLi[6];
+      let parent = document.querySelector("ul");
+      parent.insertBefore(liTag,relevantLi);
+
     </script>
   </body>
 </html>
