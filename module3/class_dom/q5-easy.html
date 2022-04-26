@@ -100,27 +100,7 @@
     </div>
     <script>
       // Q Make the filter work
-      let selectTag = document.querySelector("select");
-      selectTag.addEventListener("change",function(e){
-        let filterAttr = selectTag.value;
-        // console.log(filterAttr);
-        let allTickets = document.querySelectorAll(".price");
-        if(filterAttr == "none"){
-          for(let i=0;i<allTickets.length;i++){
-            let parentOfp = allTickets[i].parentElement;
-            parentOfp.style.display = "block";
-          }
-        }else{
-          for(let i=0;i<allTickets.length;i++){
-            if(filterAttr == allTickets[i].getAttribute("data-category")){
-                allTickets[i].parentElement.style.display = "block";
-            }
-            else{
-                allTickets[i].parentElement.style.display = "none";
-            }
-          }
-        }
-      })
+      
     </script>
   </body>
 </html>
