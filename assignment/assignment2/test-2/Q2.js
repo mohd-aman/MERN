@@ -22,21 +22,3 @@ function f() {
 f();
 
 // Solution:
-
-// function f(obj) {
-//   let nObj = JSON.parse(JSON.stringify(obj));
-//   for (let i = 1; i < nObj.length; i++) {
-//     nObj[i] = nObj[i] + 1;
-//   }
-//   delete nObj["length"];
-//   return nObj;
-// }
-
-// function g(obj, callback) {
-//   obj = callback(obj);
-//   for (let x in obj) {
-//     console.log(`at index ${x} we have value ${obj[x]}`);
-//   }
-// }
-
-// g(obj, f);

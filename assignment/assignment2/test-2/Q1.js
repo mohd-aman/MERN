@@ -15,11 +15,3 @@ console.log(f(arr));
 
 console.log(arr);
 
-
-// Solution:
-// arr is getting changed that is side effect
-
-// function f(arr) {
-//     let nArr = arr.map(function(e){return 0})
-//     return nArr;
-// }

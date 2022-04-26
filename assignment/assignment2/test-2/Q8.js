@@ -33,7 +33,3 @@ function transducer(arr, fFn, mFn) {
 // 3) Both
 // 4) None
 
-// Solution:
-// 3
-
-

@@ -5,15 +5,4 @@
 
 
 
-// Solution:
-
-function f(y, x) {
-  if (arguments.length == 1) {
-    return function (x) {
-      return y * x;
-    };
-  } else {
-    return x * y;
-  }
-}
 
