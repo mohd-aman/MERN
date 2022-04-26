@@ -151,7 +151,10 @@
       // Q Write a script which logs hello everytime a click is performed in the web page
 
       // Solution:
-
+      let bodyTag = document.querySelector("body");
+      bodyTag.addEventListener("click",function(){
+        console.log("Hello")
+      })
     </script>
   </body>
 </html>
