@@ -10,7 +10,13 @@
     <button>sayHello</button>
     <script>
       // Q- On clicking the button append hello to the page
-      
+      let btn = document.querySelector("button");
+      btn.addEventListener("click",function(){
+        let pTag = document.createElement("p");
+        pTag.innerText = "Hello";
+        let bodyTag = document.querySelector("body");
+        bodyTag.appendChild(pTag);
+      })
     </script>
   </body>
 </html>
