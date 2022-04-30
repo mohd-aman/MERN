@@ -9,7 +9,19 @@ inputTag.addEventListener('keydown',function(e){
         // console.log(value);
         inputTag.value = "";
         let liTag = document.createElement("li");
-        liTag.innerText = value;
+        liTag.innerHTML = `<div>${value}</div>
+                            <div class="delete"><i class="fa fa-trash"></i></div>`
+
+        //other way
+        // liTag.innerHTML = "<div>"+value+"</div><div><i class='fa fa-trash'></i></div>"
+        handleRemoval(liTag);
         ulTag.appendChild(liTag);
     }
 })
+
+function handleRemoval(liTag){
+    let deleteDiv = liTag.querySelector(".delete"); 
+    deleteDiv.addEventListener("click",function(){
+        liTag.remove();
+    })
+}
