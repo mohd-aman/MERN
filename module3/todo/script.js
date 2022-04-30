@@ -7,7 +7,10 @@ inputTag.addEventListener('keydown',function(e){
     if(key == 'Enter'){
         let value = inputTag.value;
         // console.log(value);
-        inputTag.value = "";
+        if(value.length == 0){
+            return;
+        }
+        inputTag.value = ""; //ui input update 
         let liTag = document.createElement("li");
         liTag.innerHTML = `<div>${value}</div>
                             <div class="delete"><i class="fa fa-trash"></i></div>`

@@ -1,0 +1,41 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #437C90;
+}
+
+input{
+    height: 3rem;
+    width: 27rem;
+    margin: 2rem;
+    padding: 0.75rem;
+    font-size: 1.25rem;
+    outline: none;
+    border-radius: 30px;
+    background-color: #EEEBD3;
+    color:#255957;
+}
+li{
+    height: 2.5rem;
+    width: 24rem;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.25rem;
+    background-color: beige;
+    border:1px solid black;
+    padding: 0.5rem;
+    margin: 0.25rem;
+    border-radius: 10px;
+}
+
+.delete{
+    color: red;
+}
