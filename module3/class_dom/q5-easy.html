@@ -109,9 +109,9 @@
           let pTagCurrent = allMovies[i].querySelector("p");
           let currentMovieFilter = pTagCurrent.getAttribute("data-category");
           if(filter == 'none' || filter == currentMovieFilter){
-            allMovies[i].style.display = "block"
+            allMovies[i].style.display = "block" //show 
           }else{
-            allMovies[i].style.display = "none";
+            allMovies[i].style.display = "none"; //don't show
           }
         }
       })
