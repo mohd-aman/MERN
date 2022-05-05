@@ -16,9 +16,12 @@ body{
 
 .toolbox-priority-cont{
     height: 3rem;
-    background-color: aqua;
+    background-color: beige;
     width: 18rem;
     margin-left: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
 }
 
 .action-btn-cont{
@@ -26,5 +29,35 @@ body{
     height: 3rem;
     width: 10rem;
     margin-left: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
 }
 
+.color{
+    height: 1.5rem;
+    width: 3rem;
+}
+
+.lightpink{
+    background-color:lightpink;
+}
+
+.blue{
+    background-color:lightblue
+}
+
+.green{
+    background-color:lightgreen;
+}
+.black{
+    background-color:black
+}
+
+.add-btn{
+    font-size: 1.5rem;
+}
+
+.remove-btn{
+    font-size: 1.5rem;
+}
