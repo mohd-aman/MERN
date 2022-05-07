@@ -1,0 +1,3 @@
+// Q -  Implement your own basic version of Promise construct present in JS
+
+// Solution:

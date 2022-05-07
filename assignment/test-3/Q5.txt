@@ -1,0 +1,2 @@
+Q- Create a function which deep clones the object 
+
