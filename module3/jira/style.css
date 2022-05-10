@@ -61,3 +61,37 @@ body{
 .remove-btn{
     font-size: 1.5rem;
 }
+
+.modal-cont{
+    background-color: lightgrey;
+    height: 50vh;
+    width: 50vw;
+    display: flex;
+    margin-left: 20rem;
+    margin-top: 7rem;
+}
+
+.textarea-cont{
+    outline:none;
+    resize: none;
+    border: none;
+    background-color:lightyellow;
+    height: 100%;
+    width: 75%;
+    font-size: 2rem;
+    padding: 2rem;
+}
+
+.priority-color-cont{
+    height: 100%;
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.priority-color{
+    height: 3rem;
+    width: 5rem;
+}
