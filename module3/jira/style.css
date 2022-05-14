@@ -137,3 +137,9 @@ body{
     padding: 5px;
     font-size: 1.25rem;
 }
+
+.lock-unlock{
+    font-size: 1.5rem;
+    margin-top:3.5rem;
+    margin-left: 14rem;
+}

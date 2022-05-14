@@ -22,7 +22,7 @@ addBtn.addEventListener("click",function(){
 
 for(let i=0;i<allPriorityColors.length;i++){
     let priorityDivOneColor = allPriorityColors[i];
-    priorityDivOneColor.addEventListener("click",function(){        
+    priorityDivOneColor.addEventListener("click",function(e){        
         for(let j=0;j<allPriorityColors.length;j++){
             allPriorityColors[j].classList.remove("active");
         }
@@ -62,8 +62,21 @@ function createTicket(ticketColor,task){
     ticketCont.setAttribute('class','ticket-cont');
     ticketCont.innerHTML = `<div class="ticket-color ${ticketColor}"></div>
                             <div class="ticket-id">#qzu03</div>
-                            <div class="task-area">${task}</div>`
+                            <div class="task-area">${task}</div>
+                            <div class="lock-unlock"><i class="fa fa-lock"></i></div>`
     mainCont.appendChild(ticketCont);
+
+    //lock unlock handle
+    let lockUnlockBtn = ticketCont.querySelector(".lock-unlock i");
+    lockUnlockBtn.addEventListener("click",function(){
+        if(lockUnlockBtn.classList.contains("fa-lock")){
+            lockUnlockBtn.classList.remove("fa-lock");
+            lockUnlockBtn.classList.add("fa-unlock");
+        }else{
+            lockUnlockBtn.classList.remove("fa-unlock");
+            lockUnlockBtn.classList.add("fa-lock");
+        }
+    })
 
     //handling delete 
     ticketCont.addEventListener("click",function(){
