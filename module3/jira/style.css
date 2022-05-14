@@ -130,16 +130,24 @@ body{
 .ticket-id{
     height: 1.5rem;
     background-color: #EEEDDE;
+    font-weight: 600;
+    font-size: .9rem;
+    color: #141E27;
+    margin-left: 0.3rem;
+    margin-top: 0.3rem;
 }
 
 .task-area{
-    height: calc(100%-1rem-1.5rem);
-    padding: 5px;
+    height: 5rem;
+    padding-left: 0.3rem;
+    padding-right: 0.3rem;
     font-size: 1.25rem;
+    overflow: auto;
+    outline: none;
+    word-break: break-all;
 }
 
 .lock-unlock{
     font-size: 1.5rem;
-    margin-top:3.5rem;
-    margin-left: 14rem;
+    margin-left: 14.5rem;
 }
