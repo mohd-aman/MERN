@@ -13,6 +13,16 @@ var uid = new ShortUniqueId();
 
 let ticketArr = [];
 
+if(localStorage.getItem("tickets")){
+    let str = localStorage.getItem("tickets");
+    let arr = JSON.parse(str);
+    ticketArr = arr;
+    for(let i=0;i<arr.length;i++){
+        let ticketObj = arr[i];
+        createTicket(ticketObj.color,ticketObj.task,ticketObj.id);
+    }
+}
+
 
 
 for (let i = 0; i < toolBoxColors.length; i++) {
@@ -106,7 +116,7 @@ function createTicket(ticketColor, task, ticketId) {
         id = ticketId;
     }
 
-    
+
     // <div class="ticket-cont">
     //         <div class="ticket-color"></div>
     //         <div class="ticket-id">#qzu03</div>
@@ -139,7 +149,7 @@ function createTicket(ticketColor, task, ticketId) {
         //update ticketArr
         let ticketIdx = getTicketIdx(id);
         ticketArr[ticketIdx].task = ticketTaskArea.textContent;
-
+        updateLocalStorage();
     })
 
     //handling delete 
@@ -151,6 +161,7 @@ function createTicket(ticketColor, task, ticketId) {
             //Delete from ticketArr
             let ticketIdx = getTicketIdx(id);
             ticketArr.splice(ticketIdx,1);//remove a ticket.
+            updateLocalStorage();
         }
     })
 
@@ -174,11 +185,14 @@ function createTicket(ticketColor, task, ticketId) {
         //update ticketArr as well
         let ticketIdx = getTicketIdx(id);
         ticketArr[ticketIdx].color = nextColor;
+        updateLocalStorage();
    
     })
 
-    if(ticketId == undefined)
+    if(ticketId == undefined){
         ticketArr.push({ "color": ticketColor, "task": task, "id": id })
+        updateLocalStorage();
+    }
 }
 
 
@@ -188,4 +202,10 @@ function getTicketIdx(id){
             return i;
         }
     }
+}
+
+
+function updateLocalStorage(){
+    let stringifyArr = JSON.stringify(ticketArr);
+    localStorage.setItem("tickets",stringifyArr);
 }
