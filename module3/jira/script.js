@@ -143,6 +143,7 @@ function createTicket(ticketColor, task, ticketId) {
     //handle color
     let ticketColorBand = ticketCont.querySelector(".ticket-color");
     ticketColorBand.addEventListener("click", function () {
+        //update UI
         let currentTicketColor = ticketColorBand.classList[1];
         let currentTicketColorIdx = -1;
         for (let i = 0; i < colors.length; i++) {
@@ -155,9 +156,19 @@ function createTicket(ticketColor, task, ticketId) {
         let nextColor = colors[nextColorIdx];
         ticketColorBand.classList.remove(currentTicketColor);
         ticketColorBand.classList.add(nextColor);
+        
+        //update ticketArr as well
+        let ticketIdx;
+        for(let i=0;i<ticketArr.length;i++){
+            if(ticketArr[i].id==id){
+                ticketIdx = i;
+                break;
+            }
+        }
+        ticketArr[ticketIdx].color = nextColor;
+   
     })
 
-    if (ticketId == undefined)
-        ticketArr.push({ "color": ticketColor, "task": task, "id": "#" + id })
-    console.log(ticketArr);
+    if(ticketId == undefined)
+        ticketArr.push({ "color": ticketColor, "task": task, "id": id })
 }
