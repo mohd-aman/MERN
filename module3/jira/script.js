@@ -106,6 +106,7 @@ function createTicket(ticketColor, task, ticketId) {
         id = ticketId;
     }
 
+    
     // <div class="ticket-cont">
     //         <div class="ticket-color"></div>
     //         <div class="ticket-id">#qzu03</div>
