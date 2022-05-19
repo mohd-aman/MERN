@@ -20,3 +20,12 @@
 //Higher Order Function -> functions which accepts a function in parameter or returns a function;
 
 
+function func(){
+    return function(){
+        console.log("Inner function");
+    }
+}
+
+let innerFn = func();
+
+innerFn();
