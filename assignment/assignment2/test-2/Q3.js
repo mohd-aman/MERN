@@ -4,5 +4,17 @@
 // f(x)(y)
 
 
+function f(x,y){
+    if(y == undefined){
+       return function(y){
+           return y*x;
+       } 
+    }else{
+        return y*x;
+    }
+}
+
+console.log(f(5,4));
+console.log(f(5)(4));
 
 

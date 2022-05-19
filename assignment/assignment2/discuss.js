@@ -11,7 +11,12 @@
 // console.log("After func call"+a);
 
 
-const a = [20,10,30];
-// a.push(50);
-a = [];
-console.log(a);
+// const a = [20,10,30];
+// // a.push(50);
+// a = [];
+// console.log(a);
+
+
+//Higher Order Function -> functions which accepts a function in parameter or returns a function;
+
+
