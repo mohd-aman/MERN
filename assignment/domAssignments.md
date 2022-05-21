@@ -19,7 +19,6 @@ where data is maintained in localstorage, and all data is not lost on refresh.
 Deadline: 2 days(excluding today)
 Send github link or mail me the assignment. -> mohammad.aman@pepcoding.com
 
-
-//second assignment
+//second assignment submit it on time
 
     https://mohd-aman.github.io/domAssignment/
