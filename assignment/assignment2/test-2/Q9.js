@@ -19,3 +19,8 @@ console.log(instance2());
 // 2) error
 // 3) NaN
 // 4) 5undefined
+
+
+//solution 
+
+//3) NaN

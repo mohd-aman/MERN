@@ -41,3 +41,5 @@ console.log(a);
 // [ 'a', 'b' ]
 // [ 'a', 'b', [ 'a', 'b' ] ]
 
+//solution 
+//2)
