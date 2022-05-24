@@ -18,6 +18,7 @@
     height:85vh;
     background-color: aquamarine;
     overflow: auto;
+    position: relative;
 }
 
 .sheets{
@@ -66,7 +67,7 @@
     background-color: grey;
     position: absolute;
     left: 0px;
-    top:90px;
+    top:30px;
 }
 
 .left-col-cell{
@@ -80,6 +81,6 @@
 
 .cells{
     position: absolute;
-    top:90px;
+    top:30px;
     left:30px;
 }
