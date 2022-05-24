@@ -1,0 +1,36 @@
+*{
+    margin: 0px;   
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.menu-options{
+    border: 0.5px solid;
+    height: 30px;
+}
+
+.address-content{
+    border: 0.5px solid;
+    height: 30px;
+}
+
+.cells-content{
+    height:85vh;
+    background-color: aquamarine;
+    overflow: auto;
+}
+
+.sheets{
+    border: 0.5px solid;
+    height: 30px;
+}
+
+.row{
+    display: flex;
+}
+
+.cell{
+    border: 0.2px solid;
+    height: 30px;
+    width: 100px;
+}
