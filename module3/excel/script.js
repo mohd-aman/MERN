@@ -21,4 +21,16 @@ for(let i=0;i<allCells.length;i++){
         // console.log(address);
         addressInput.value = address;
     })
+
+    allCells[i].addEventListener("blur",function(e){
+        let cellValue = e.target.textContent;
+        let rowId  = e.target.getAttribute("rowid");
+        let colId = e.target.getAttribute("colid");
+        let cellObject = db[rowId][colId];
+        if(cellObject.value == cellValue){
+            return;
+        }
+        cellObject.value = cellValue;
+        console.log("After UPdate",cellObject);
+    })
 }
