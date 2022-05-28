@@ -32,8 +32,9 @@
 
 .cell{
     border: 0.2px solid;
-    height: 30px;
+    min-height: 30px;
     width: 100px;
+    outline: none;
 }
 
 .top-left-cell{
