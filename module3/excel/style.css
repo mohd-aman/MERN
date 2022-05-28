@@ -43,6 +43,7 @@
     width: 30px;
     background-color: grey;
     position: absolute;
+    z-index: 2;
 
 }
 
@@ -51,6 +52,7 @@
     position: absolute;
     background-color: grey;
     left: 30px;
+    z-index: 1;
 }
 
 .top-row-cell{
@@ -68,6 +70,7 @@
     position: absolute;
     left: 0px;
     top:30px;
+    z-index: 1;
 }
 
 .left-col-cell{
