@@ -1,3 +1,5 @@
+function
+
 
 function getRowIdColIdFromElement(element){
     let rowId  = element.getAttribute("rowid");
