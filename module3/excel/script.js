@@ -63,6 +63,9 @@ formulaInput.addEventListener("blur",function(e){
     if(formula){
         let {rowId,colId} = getRowIdColIdFromElement(lastSelectedCell);
         let cellObject = db[rowId][colId];
+        if(cellObject.formula){
+            removeFormula(cellObject);
+        }
         let computedValue = solveFormula(formula,cellObject); // will implement in next commit
         //update db
         cellObject.value = computedValue;
