@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Excel Clone</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
@@ -14,7 +15,18 @@
         <input type="text" id="formula">
     </div>
     <div class="cells-content"></div>
-    <div class="sheets"></div>
+    <div class="sheets">
+        <div class="add-sheet">
+            <i class="fa fa-plus"></i>
+        </div>
+        <div class="sheets-list">
+            <div class="sheet active-sheet">Sheet 1</div>
+            <div class="sheet">Sheet 2</div>
+            <div class="sheet">Sheet 3</div>
+            <div class="sheet">Sheet 4</div>
+            <div class="sheet">Sheet 5</div>
+        </div>
+    </div>
 </body>
 <script src="./init.js"></script>
 <script src="./script.js"></script>

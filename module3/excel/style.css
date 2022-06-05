@@ -23,15 +23,17 @@
 }
 
 .cells-content{
-    height:85vh;
+    height: 89vh;
     background-color: white;
     overflow: auto;
     position: relative;
 }
 
 .sheets{
+    display: flex;
     border: 0.5px solid;
     height: 30px;
+    background-color: var(--cell-background);
 }
 
 .row{
@@ -110,4 +112,35 @@
     width: 100%;
     padding: 5px;
     border-left:0.1px solid var(--border-color) ;
+}
+
+.add-sheet{
+    width: 30px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: green;
+    border-right: 0.1px solid var(--border-color);
+}
+
+.sheets-list{
+    display: flex;
+    height: 100%;
+    align-items: center;
+}
+
+.sheet{
+    border-right: 0.1px solid var(--border-color);
+    width: 90px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.active-sheet{
+     background-color: white;
+     font-weight: bold;
 }
