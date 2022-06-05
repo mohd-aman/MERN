@@ -1,22 +1,30 @@
+:root{
+    --border-color:grey;
+    --cell-background:lightgray;
+}
+
+
 *{
     margin: 0px;   
     padding: 0px;
     box-sizing: border-box;
+    font-family: "Robot",sans-serif;
+    font-size: 0.85rem;
 }
 
 .menu-options{
-    border: 0.5px solid;
+    border-bottom: 0.5px solid var(--border-color);
     height: 30px;
 }
 
 .address-content{
-    border: 0.5px solid;
-    height: 30px;
+    height: 20px;
+    display: flex;
 }
 
 .cells-content{
     height:85vh;
-    background-color: aquamarine;
+    background-color: white;
     overflow: auto;
     position: relative;
 }
@@ -31,53 +39,53 @@
 }
 
 .cell{
-    border: 0.2px solid;
-    min-height: 30px;
-    width: 100px;
+    border-left: 0.1px solid var(--border-color);
+    border-bottom: 0.1px solid var(--border-color);
+    min-height: 20px;
+    width: 90px;
     outline: none;
 }
 
 .top-left-cell{
-    border-right: 0.1px solid;
-    border-bottom: 0.1px solid;
-    height: 30px;
-    width: 30px;
-    background-color: grey;
+    border-right: 0.1px solid var(--border-color);
+    border-bottom: 0.1px solid var(--border-color);
+    height: 20px;
+    width: 40px;
+    background-color: var(--cell-background);
     position: absolute;
     z-index: 2;
-
 }
 
 .top-row{
     display: flex;
     position: absolute;
-    background-color: grey;
-    left: 30px;
+    background-color: var(--cell-background);
+    left: 40px;
     z-index: 1;
 }
 
 .top-row-cell{
-    height: 30px;
-    width: 100px;
-    border-bottom: 0.1px solid;
-    border-left: 0.1px solid;
+    height: 20px;
+    width: 90px;
+    border-bottom: 0.1px solid var(--border-color);
+    border-left: 0.1px solid var(--border-color);
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .left-col{
-    background-color: grey;
+    background-color: var(--cell-background);
     position: absolute;
     left: 0px;
-    top:30px;
+    top:20px;
     z-index: 1;
 }
 
 .left-col-cell{
-    height: 30px;
-    width: 30px;
-    border-bottom: 0.1px solid;
+    height: 20px;
+    width: 40px;
+    border-bottom: 0.1px solid var(--border-color);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -85,12 +93,21 @@
 
 .cells{
     position: absolute;
-    top:30px;
-    left:30px;
+    top:20px;
+    left:40px;
 }
 
 #address{
     text-align: center;
-    font-size: large;
-    width: 60px;
+    width: 50px;
+    border: none;
+    background-color: var(--cell-background);
+}
+
+#formula{
+    border: none;
+    outline: none;
+    width: 100%;
+    padding: 5px;
+    border-left:0.1px solid var(--border-color) ;
 }
