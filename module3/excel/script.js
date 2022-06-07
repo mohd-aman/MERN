@@ -25,6 +25,15 @@ for(let i=0;i<allCells.length;i++){
         addressInput.value = address;
         //update UI
         formulaInput.value = cellObject.formula;
+        
+        cellObject.fontStyle.bold?document.querySelector(".bold").classList.add("active-font-style"):
+        document.querySelector(".bold").classList.remove("active-font-style");
+
+        cellObject.fontStyle.italic?document.querySelector(".italic").classList.add("active-font-style"):
+        document.querySelector(".italic").classList.remove("active-font-style");
+
+        cellObject.fontStyle.underline?document.querySelector(".underline").classList.add("active-font-style"):
+        document.querySelector(".underline").classList.remove("active-font-style");
     })
 
     allCells[i].addEventListener("blur",function(e){

@@ -169,3 +169,7 @@
     opacity: 0.7;
     border-radius: 5px;
 }
+
+.active-font-style{
+    background-color: var(--cell-background);
+}
