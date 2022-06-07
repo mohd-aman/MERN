@@ -29,18 +29,18 @@ function sheetListener(sheet){
         sheet.classList.add("active-sheet");
         let sheetId = sheet.getAttribute("sheetId");
         // console.log(sheet);
-        db = sheetsDB[sheetId];
+        db = sheetsDB[sheetId].db;
+        visitedCells = sheetsDB[sheetId].visitedCells;
         setUi();
     })
 }
 
 function setUi(){
-    for(let i=0;i<100;i++){
-        for(let j=0;j<26;j++){
-            let cell = document.querySelector(`div[rowid="${i}"][colid="${j}"]`);
-            let cellObject = db[i][j];
-            cell.innerHTML = cellObject.value;
-        }
+    for(let i=0;i<visitedCells.length;i++){
+        let {rowId,colId} = visitedCells[i];
+        let cellObject = db[rowId][colId];
+        let cell = document.querySelector(`div[rowid="${rowId}"][colid="${colId}"]`);
+        cell.innerHTML = cellObject.value;
     }
 }
 

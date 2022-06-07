@@ -38,6 +38,11 @@ for(let i=0;i<allCells.length;i++){
         cellObject.value = cellValue;
         console.log("After UPdate",cellObject);
         updateChildren(cellObject);
+        if(cellObject.visited){
+            return;
+        }
+        cellObject.visited = true;
+        visitedCells.push({"rowId":rowId,"colId":colId});
     })
 
     allCells[i].addEventListener("keydown",function(e){
