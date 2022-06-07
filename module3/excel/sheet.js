@@ -24,6 +24,7 @@ function sheetListener(sheet){
         if(sheet.classList.contains("active-sheet")){
             return;
         }
+        initUi();
         let activeSheet = document.querySelector(".active-sheet");
         activeSheet.classList.remove("active-sheet");
         sheet.classList.add("active-sheet");
