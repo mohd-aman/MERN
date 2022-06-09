@@ -27,6 +27,7 @@ function setFontStyle(styleName,element){
             }else{
                 lastSelectedCell.style.textDecoration = "none";
             }
+            element.classList.remove("active-font-style");
         }else{
             if(styleName == "bold"){
                 lastSelectedCell.style.fontWeight = "bold";
@@ -35,6 +36,7 @@ function setFontStyle(styleName,element){
             }else{
                 lastSelectedCell.style.textDecoration = "underline";
             }
+            element.classList.add("active-font-style");
         }
         cellObject.fontStyle[styleName] = !cellObject.fontStyle[styleName];
     }

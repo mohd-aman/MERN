@@ -15,10 +15,23 @@ cellsContentDiv.addEventListener("scroll",function(e){
     topLeftCell.style.left = scrollFromLeft+"px";
 })
 
+let rowId;
+let colId;
 for(let i=0;i<allCells.length;i++){
     allCells[i].addEventListener("click",function(e){
-        let rowId = Number(e.target.getAttribute("rowid"));
-        let colId = Number(e.target.getAttribute("colid"));
+        if(lastSelectedCell){
+            lastSelectedCell.classList.remove("active-cell");
+            document.querySelector(`div[trid='${colId}']`).classList.remove("active-row-col")
+            document.querySelector(`div[lcid='${rowId}']`).classList.remove("active-row-col");
+        }
+        
+        rowId = Number(e.target.getAttribute("rowid"));
+        colId = Number(e.target.getAttribute("colid"));
+        
+        e.target.classList.add("active-cell");
+        document.querySelector(`div[trid='${colId}']`).classList.add("active-row-col")
+        document.querySelector(`div[lcid='${rowId}']`).classList.add("active-row-col");
+
         let address = String.fromCharCode(65+colId)+(rowId+1)+"";
         // console.log(address);
         let cellObject = db[rowId][colId];

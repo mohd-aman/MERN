@@ -172,4 +172,13 @@
 
 .active-font-style{
     background-color: var(--cell-background);
+    border-radius: 5px;
+}
+
+.active-cell{
+    border: 2px solid green;
+}
+
+.active-row-col{
+    background-color: darkgrey;
 }
