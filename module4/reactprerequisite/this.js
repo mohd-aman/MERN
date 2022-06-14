@@ -15,9 +15,9 @@ let obj = {
     age:23,
     def:function(){
         // console.log(this);
-        function klm(){
-            console.log(this);
-        }
+            function klm(){
+                console.log(this);
+            }
         klm(); //function invocation
     }
 }
