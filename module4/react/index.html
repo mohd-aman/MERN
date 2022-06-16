@@ -28,9 +28,12 @@
 
 //JSX -> javascript + html
 
-function Element1(){
+function Element1({name="Aman",age}){
     return(
-        <h1>Hello Coder</h1>
+        <div>
+            <h1>Hello {name} Coder</h1>
+            <h3>{age}</h3>
+        </div>
     )
 }
 
@@ -43,6 +46,9 @@ function Element2(){
 function Parent(){
     return(
         <div>
+        <Element1 name="Dheeraj" age = "23"/>
+        <Element1 name="Bhavesh"/>
+        <Element1 name="Ayush"/>
         <Element1/>
         <Element2/>
         <Element1/>
