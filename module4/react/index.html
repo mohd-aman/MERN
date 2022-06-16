@@ -28,13 +28,30 @@
 
 //JSX -> javascript + html
 
-function Element(){
+function Element1(){
     return(
         <h1>Hello Coder</h1>
     )
 }
 
-ReactDOM.render(<Element/>,root);
+function Element2(){
+    return(
+        <h2>How are you?</h2>
+    )
+}
+
+function Parent(){
+    return(
+        <div>
+        <Element1/>
+        <Element2/>
+        <Element1/>
+        <Element2/>    
+        </div>
+    )
+}
+
+ReactDOM.render(<Parent/>,root);
 
 </script>
 </html>
