@@ -8,6 +8,21 @@
     <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+        button{
+            margin: 20px;
+            outline:none;
+            border:none;
+            background-color: red;
+            width: 50px;
+            height: 20px;
+            font-size: large;
+            color: white;
+        }
+        h1{
+            margin: 70px;
+        }
+    </style>
 </head>
 <body>
     <div id="root">
@@ -18,11 +33,30 @@
         class Counter extends React.Component{
             constructor(){
                 super();
+                this.state = {
+                    count:0,
+                };
+            }
+
+            increment = ()=>{
+                this.setState({
+                    count:this.state.count+1,
+                })
+            }
+
+            decrement = ()=>{
+                this.setState({
+                    count:this.state.count-1,
+                })
             }
 
         render(){
             return(
-                <h1>Hello World</h1>
+                <div>
+                    <h1>{this.state.count}</h1>
+                    <button onClick = {this.increment}>+</button>
+                    <button onClick = {this.decrement}>-</button>
+                </div>
             )
             }
         }
