@@ -36,3 +36,30 @@
     transform: rotate(360deg);
   }
 }
+
+.banner-card{
+  width: 100vw;
+  margin-top: 2vh;
+  margin-bottom: 3vh;
+  position: relative;
+  height: 70vh;
+}
+
+.banner-img{
+  width: 100%;
+  height: 70vh;
+}
+
+.banner-title{
+  position: absolute;
+  top:45vh;
+  left:5vw;
+  color:white;
+}
+
+.banner-text{
+  position: absolute;
+  color: white;
+  top:55vh;
+  left: 5vw;
+}
