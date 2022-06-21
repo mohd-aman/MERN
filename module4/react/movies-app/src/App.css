@@ -46,7 +46,7 @@
 }
 
 .banner-img{
-  width: 100%;
+  width: 99%;
   height: 70vh;
 }
 
@@ -69,4 +69,23 @@
   flex-wrap: wrap;
   justify-content: center;
   padding: 1rem;
+}
+
+
+.movie-card{
+ position: relative; 
+ width: 20vw;
+ margin: 1rem;
+ color: white;
+}
+
+.movie-title{
+  position: absolute;
+  top:1rem;
+  left: 1rem;
+}
+
+.movies-button{
+  position: absolute;
+  bottom: 2rem;
 }

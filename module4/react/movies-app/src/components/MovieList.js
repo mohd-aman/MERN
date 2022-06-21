@@ -12,12 +12,12 @@ class MovieList extends Component{
             <div className="movies-list">
                 {moviesArr.map((movieEle)=>(
                     <div className="card movie-card">
-                    <img src="https://th.bing.com/th/id/OIP.bgZRya9d6c9saeEppWC1AQHaEK?pid=ImgDet&rs=1" style={{height:'40vh',width:'20vw'}} className="card-img-top movie-img" alt="..."/>
-                    <div className="card-body">
-                      <h5 className="card-title">{movieEle.original_title}</h5>
+                        <img src={`https://image.tmdb.org/t/p/original${movieEle.backdrop_path}`} style={{height:'40vh',width:'20vw'}} className="card-img-top movie-img" alt="..."/>
+                        <h5 className="card-title movie-title">{movieEle.title}</h5>
+                        <div style={{display:'flex',justifyContent:"center"}}>
+                            <a href="#" type="button" className="btn btn-primary movies-button">Add to Favourites</a>
+                        </div>
                     </div>
-                  </div>
-                    
                 ))}
             </div>
             </>
