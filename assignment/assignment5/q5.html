@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      .c1,
+      .c2 {
+        border: solid;
+        width: 15rem;
+        height: 15rem;
+        border: 1px solid;
+      }
+
+      .c1 {
+        background-color: red;
+        z-index: 2;
+        /* Solution: */
+      }
+
+      .c2 {
+        background-color: yellow;
+        position: fixed;
+        top: 7.5rem;
+        z-index: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Q- Even though div.c1 has higher z-index than div.c2 but it does not work. Find the bug. -->
+    <div class="c1"></div>
+    <div class="c2"></div>
+  </body>
+</html>

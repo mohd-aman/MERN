@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="number" id="in1" />
+    <input type="number" id="in2" />
+    <button class="operation">+</button>
+    <button class="operation">-</button>
+    <button class="operation">*</button>
+    <button class="operation">/</button>
+    <p>0</p>
+    <button id="memo">memory</button>
+    <p id="memo-text"></p>
+    <script>
+      // Q - You are given a functional calculator. But its memory button does not work. Using localStorage save all the calculations and on click of memory button show them on screen
+
+      //Given Code:
+        let in1 = document.querySelector("#in1");
+        let in2 = document.querySelector("#in2");
+        let btns = document.querySelectorAll("button.operation");
+        for (let i = 0; i < btns.length; i++) {
+          btns[i].addEventListener("click", function (e) {
+            let symbol = e.currentTarget.innerText;
+            let v1 = Number(in1.value);
+            let v2 = Number(in2.value);
+            let p = document.querySelector("p");
+            if (symbol == "+") {
+              p.innerText = v1 + v2;
+            } else if (symbol == "-") {
+              p.innerText = v1 - v2;
+            } else if (symbol == "*") {
+              p.innerText = v1 * v2;
+            } else if (symbol == "/") {
+              p.innerText = v1 / v2;
+            }
+          });
+        }
+
+      //   Solution:
+
+    
+    </script>
+  </body>
+</html>
