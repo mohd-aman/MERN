@@ -1,0 +1,62 @@
+<!-- bubbling  -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bubbling</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    .container {
+      border: 1px solid;
+      background-color: yellow;
+    }
+
+    p {
+      background-color: red;
+      margin: 4rem;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, quidem?
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, quidem?
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, quidem?
+    </p>
+  </div>
+  <script>
+    //   Q- Right now on click of div tag it alerts "div tag was clicked" 
+    // and on click of any p tag it alerts "p tag was clicked" and "div tag was clicked". 
+    // This is a bug. On clicking of p tag it should only alert about itself. fix it
+
+    //   Given Code:
+    let ps = document.querySelectorAll("p");
+    let container = document.querySelector(".container");
+    for (let i = 0; i < ps.length; i++) {
+      ps[i].addEventListener("click", function () {
+        alert("p tag was clicked");
+      });
+    }
+
+    container.addEventListener("click", function () {
+      alert("div tag was clicked");
+    });
+
+      //   Solution:
+
+  </script>
+</body>
+
+</html>
