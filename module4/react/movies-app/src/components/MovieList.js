@@ -8,17 +8,33 @@ class MovieList extends Component {
         this.state={
             hover:"",
             pArr :[1],
-            movies:[]
+            movies:[],
+            currPage:1
         };
     }
 
     async componentDidMount(){
         console.log("Component Did Mount");
-        const res = await axios.get('https://api.themoviedb.org/3/movie/popular?api_key=81242a2aa2066e052c78ec9ac1700c59&language=en-US&page=1')
+        const res = await axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=81242a2aa2066e052c78ec9ac1700c59&language=en-US&page=${this.state.currPage}`)
         console.log(res.data);
         this.setState({
             movies:[...res.data.results]
         })
+    }
+
+    changeMovies = async()=>{
+        const res = await axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=81242a2aa2066e052c78ec9ac1700c59&language=en-US&page=${this.state.currPage}`)
+        console.log(res.data);
+        this.setState({
+            movies:[...res.data.results]
+        })
+    }
+
+    handleNext=()=>{
+        this.setState({
+            pArr:[...this.state.pArr,this.state.pArr.length+1],
+            currPage:this.state.currPage+1
+        },this.changeMovies)
     }
 
     render() {
@@ -49,7 +65,7 @@ class MovieList extends Component {
                             <li className="page-item"><a className="page-link" href="#">{ele}</a></li>
                         ))}
                         
-                        <li className="page-item"><a className="page-link" href="#">Next</a></li>
+                        <li className="page-item"><a className="page-link" onClick={this.handleNext} >Next</a></li>
                     </ul>
                 </nav>
                 </div>
