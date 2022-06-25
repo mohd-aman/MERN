@@ -89,3 +89,11 @@
   position: absolute;
   bottom: 2rem;
 }
+
+.genre-selector{
+  padding-top: 3rem;
+}
+
+.fav-table{
+padding-top:3rem;
+}
