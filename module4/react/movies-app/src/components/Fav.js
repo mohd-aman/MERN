@@ -28,6 +28,27 @@ class Fav extends Component {
         })
     }
 
+    handleChangeGenre = (genre)=>{
+        this.setState({
+            currgenre:genre
+        },this.filterMovies)
+    }
+
+    filterMovies = ()=>{
+        let genreIds = { 28: "Action", 12: "Adventure", 16: "Animation", 35: "Comedy", 80: "Crime", 99: "Documentary", 18: "Drama", 10751: "Family", 14: "Fantasy", 36: "History", 27: "Horror", 10402: "Music", 9648: "Mystery", 10749: "Romance", 878: "Science Fiction", 10770: "TV Movie", 53: "Thriller", 10752: "War", 37: "Western"}
+        let data = JSON.parse(localStorage.getItem("movies-app") || '[]');
+        if(this.state.currgenre == "All genres"){
+            this.setState({
+                movies:[...data]
+            })
+        }else{
+            let filteredMovies = data.filter((movieObj)=>genreIds[movieObj.genre_ids[0]] == this.state.currgenre)
+            this.setState({
+                movies:[...filteredMovies]
+            })
+        }
+    }
+
     render() {
         let genreIds = { 28: "Action", 12: "Adventure", 16: "Animation", 35: "Comedy", 80: "Crime", 99: "Documentary", 18: "Drama", 10751: "Family", 14: "Fantasy", 36: "History", 27: "Horror", 10402: "Music", 9648: "Mystery", 10749: "Romance", 878: "Science Fiction", 10770: "TV Movie", 53: "Thriller", 10752: "War", 37: "Western"}
         return (
@@ -40,7 +61,7 @@ class Fav extends Component {
                                     this.state.currgenre == genre ?(
                                         <li className="list-group-item active" >{genre}</li>
                                     ):
-                                    (<li className="list-group-item">{genre}</li>)
+                                    (<li className="list-group-item" onClick={()=>this.handleChangeGenre(genre)}>{genre}</li>)
                                 ))
                             }
                         </ul>
