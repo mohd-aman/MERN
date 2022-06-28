@@ -52,7 +52,7 @@ class Fav extends Component {
                                             <td>{genreIds[movieEle.genre_ids[0]]}</td>
                                             <td>{movieEle.popularity}</td>
                                             <td>{movieEle.vote_average}</td>
-                                            <td><button type="button" className="btn btn-danger">Danger</button></td>
+                                            <td><button type="button" className="btn btn-danger">Delete</button></td>
                                         </tr>
                                     ))
                                 }
