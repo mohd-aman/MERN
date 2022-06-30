@@ -7,7 +7,8 @@ class Fav extends Component {
         this.state = {
             genres:[],
             currgenre:'All genres',
-            movies:[]
+            movies:[],
+            currText:''
         }
     }
 
@@ -48,9 +49,34 @@ class Fav extends Component {
             })
         }
     }
+    
+    handleCurrText = (inputValue)=>{
+        console.log(inputValue)
+        this.setState({
+            currText:inputValue
+        },this.searchMovies)
+    }
+
+    searchMovies = ()=>{
+        if(this.state.currText != ''){
+            let filteredArr = this.state.movies.filter((movieObj)=>{
+                let title = movieObj.original_title.toLowerCase();
+                return title.includes(this.state.currText.toLowerCase());
+            })
+            this.setState({
+                movies:[...filteredArr]
+            })
+        }else{
+            let data = JSON.parse(localStorage.getItem("movies-app") || '[]');
+            this.setState({
+                movies:[...data]
+            })
+        }
+    }
 
     render() {
         let genreIds = { 28: "Action", 12: "Adventure", 16: "Animation", 35: "Comedy", 80: "Crime", 99: "Documentary", 18: "Drama", 10751: "Family", 14: "Fantasy", 36: "History", 27: "Horror", 10402: "Music", 9648: "Mystery", 10749: "Romance", 878: "Science Fiction", 10770: "TV Movie", 53: "Thriller", 10752: "War", 37: "Western"}
+        
         return (
             <div className="container">
                 <div className="row">
@@ -68,7 +94,7 @@ class Fav extends Component {
                     </div>
                     <div className="col-9 fav-table">
                         <div className="row">
-                            <input type="text" className="form-control col" placeholder="Search" />
+                            <input type="text" className="form-control col" placeholder="Search" value={this.state.currText} onChange={(e)=>this.handleCurrText(e.target.value)}/>
                             <input type="number" className="form-control col" />
                         </div>
 
