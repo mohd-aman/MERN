@@ -88,6 +88,40 @@ class Fav extends Component {
         })
     }
 
+    sortPopularityAsc = ()=>{
+        let temp = this.state.movies.map((movieObj)=>movieObj);
+        temp.sort(function(objA,objB){
+            return objA.popularity - objB.popularity;
+        })
+        this.setState({
+            movies:[...temp],
+            movies2:[...temp]
+        })
+    }
+
+    sortRatingDesc = ()=>{
+        let temp = this.state.movies.map((movieObj)=>movieObj);
+        temp.sort(function(objA,objB){
+            return objB.vote_average - objA.vote_average;
+        })
+        this.setState({
+            movies:[...temp],
+            movies2:[...temp]
+        })
+    }
+
+    sortRatingAsc = ()=>{
+        let temp = this.state.movies.map((movieObj)=>movieObj);
+        temp.sort(function(objA,objB){
+            return objA.vote_average - objB.vote_average;
+        })
+        this.setState({
+            movies:[...temp],
+            movies2:[...temp]
+        })
+    }
+
+
     render() {
         let genreIds = { 28: "Action", 12: "Adventure", 16: "Animation", 35: "Comedy", 80: "Crime", 99: "Documentary", 18: "Drama", 10751: "Family", 14: "Fantasy", 36: "History", 27: "Horror", 10402: "Music", 9648: "Mystery", 10749: "Romance", 878: "Science Fiction", 10770: "TV Movie", 53: "Thriller", 10752: "War", 37: "Western"}
         
@@ -120,9 +154,13 @@ class Fav extends Component {
                                     <th scope="col" style={{display:"flex",alignItem:"center",justifyContent:"space-evenly"}}>
                                         <i class="fa fa-sort-up" style={{marginTop:"0.5rem"}} onClick={this.sortPopularityDesc}></i>
                                          Popularity
-                                        <i class="fa fa-sort-down"></i>
+                                        <i class="fa fa-sort-down" onClick={this.sortPopularityAsc}></i>
                                     </th>
-                                    <th scope="col">Rating</th>
+                                    <th scope="col">
+                                        <i class="fa fa-sort-up" style={{marginTop:"0.5rem"}} onClick={this.sortRatingDesc}></i>
+                                             Rating
+                                        <i class="fa fa-sort-down" onClick={this.sortRatingAsc}></i>
+                                    </th>
                                     <th scope="col">Delete</th>
                                 </tr>
                             </thead>
