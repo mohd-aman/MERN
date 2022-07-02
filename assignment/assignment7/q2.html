@@ -1,0 +1,40 @@
+<!-- Session storage 
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <h3>Username</h3>
+      <input type="text" id="id" required />
+      <h3>Password</h3>
+      <input type="text" id="pass" required />
+      <button>Login</button>
+    </div>
+    <h1 style="display: none">Home</h1>
+    <script>
+      let btn = document.querySelector("button");
+      let container = document.querySelector(".container");
+      let home = document.querySelector("h1");
+      let username = document.querySelector("#id");
+      let pass = document.querySelector("#pass");
+      let staticPass = "abc";
+
+      if (sessionStorage.getItem("logged")) {
+        container.style.display = "none";
+        home.style.display = "block";
+      }
+
+      btn.addEventListener("click", function () {
+        if (pass.value == "abc") {
+          container.style.display = "none";
+          home.style.display = "block";
+          sessionStorage.setItem("logged", true);
+        }
+      });
+    </script>
+  </body>
+</html>

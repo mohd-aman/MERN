@@ -1,0 +1,61 @@
+<!-- indexDB -->
+<!-- Q- Create an employees database using indexedDb. It should have empolyee name and their unique id. Also create a panel to add new employees to the database with their name,address,phone number -->
+
+
+<!-- Solution: -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h3>Name</h3>
+    <input type="text" id="name" />
+    <h3>Address</h3>
+    <input type="text" id="add" />
+    <h3>Phone</h3>
+    <input type="text" id="ph" />
+    <button>Add to database</button>
+    <script>
+      let db;
+
+      let name = document.querySelector("#name");
+      let address = document.querySelector("#add");
+      let phone = document.querySelector("#ph");
+      let btn = document.querySelector("button");
+      let request = indexedDB.open("employees", 1);
+
+      request.onsuccess = function (e) {
+        db = request.result;
+      };
+
+      request.onerror = function (e) {
+        console.log(e);
+      };
+
+      request.onupgradeneeded = function (e) {
+        db = request.result;
+        db.createObjectStore("employee", { keyPath: "eId" });
+      };
+
+      btn.addEventListener("click", function () {
+        addEmployee();
+      });
+      function addEmployee() {
+        let tx = db.transaction("employee", "readwrite");
+
+        let store = tx.objectStore("employee");
+        store.add({
+          eId: Date.now(),
+          name: name.value,
+          address: address.value,
+          phone: phone.value,
+        });
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,89 @@
+<!-- location API -->
+<!-- Q - Create a location vizualizer. It should show the four parts (3 if port number not available) of a url:
+1- Protocol Used 
+2- Hostname
+3- Pathname 
+4- Port (if available ) -->
+
+
+<!-- Solution:  -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      h1 {
+        text-align: center;
+      }
+
+      .complete {
+        display: flex;
+      }
+      .protocol,
+      .host,
+      .path,
+      .port {
+        text-align: center;
+        height: 6rem;
+        border: 5px dashed;
+        margin: 1.5rem;
+        font-size: 2rem;
+      }
+      .protocol,
+      .port {
+        width: 10rem;
+      }
+
+      .protocol {
+        border-color: red;
+      }
+
+      .port {
+        border-color: yellow;
+      }
+      .host {
+        border-color: blue;
+        width: 25rem;
+      }
+
+      .path {
+        border-color: green;
+        width: 35rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>URL</h1>
+    <div class="complete">
+      <div class="protocol">
+        <div class="value"></div>
+        <div class="label">(Protocol)</div>
+      </div>
+      <div class="host">
+        <div class="value"></div>
+        <div class="label">(Host)</div>
+      </div>
+      <div class="path">
+        <div class="value"></div>
+        <div class="label">(Path)</div>
+      </div>
+      <div class="port">
+        <div class="value"></div>
+        <div class="label">(Port)</div>
+      </div>
+    </div>
+    <script>
+      document.querySelector(".host .value").innerText = location.hostname;
+      document.querySelector(".port .value").innerText = location.port;
+      document.querySelector(".protocol .value").innerText = location.protocol;
+      document.querySelector(".path .value").innerText = location.pathname;
+    </script>
+  </body>
+</html>

@@ -1,0 +1,61 @@
+<!-- Q- Create an audio recoder  -->
+
+
+<!-- Solution: -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recorder</title>
+  </head>
+  <body>
+    <button id="record-audio">Record</button>
+    <script>
+      let constraints = { audio: true };
+
+      let audBtn = document.querySelector("#record-audio");
+
+      let mediaRecorder;
+      let chunks = [];
+      let recordState = false;
+
+      audBtn.addEventListener("click", function () {
+        if (!recordState) {
+          recordState = true;
+          mediaRecorder.start();
+          audBtn.innerText = "Recording...";
+        } else {
+          recordState = false;
+          mediaRecorder.stop();
+          audBtn.innerText = "Record";
+        }
+      });
+
+      navigator.mediaDevices
+        .getUserMedia(constraints)
+        .then(function (mediaStream) {
+
+          mediaRecorder = new MediaRecorder(mediaStream);
+
+          mediaRecorder.ondataavailable = function (e) {
+            chunks.push(e.data);
+          };
+
+          mediaRecorder.onstop = function () {
+            let blob = new Blob(chunks, { type: "audio/mp3" });
+            chunks = [];
+
+            let blobUrl = URL.createObjectURL(blob);
+            let link = document.createElement("a");
+            link.href = blobUrl;
+            link.download = Date.now()+".mp3";
+            link.click();
+            link.remove();
+          };
+        });
+    </script>
+  </body>
+</html> -->

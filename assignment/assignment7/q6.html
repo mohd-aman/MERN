@@ -1,0 +1,48 @@
+<!-- geolocation api  -->
+<!--Q- Write a script that get your location on the globe and current month and according to those both data inputs predict what would be the weather. Example in india if its June then probably its summer. That's how you predict the weather, the 2 data points being location- India (Northern hemisphere) and month. Display the predicted weather on screen using the p tag -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <style>
+    p {
+      font-size: 10rem;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <p>Weather</p>
+  <script>
+      //     Solution:
+
+      //   let season;
+      //   let lat;
+      //   function getSeason(lat, month) {
+      //     if (month > 2 && month < 9) {
+      //       return lat > 0 ? "Summer" : "Winter";
+      //     } else {
+      //       return lat > 0 ? "Winter" : "Summer";
+      //     }
+      //   }
+
+      //   window.navigator.geolocation.getCurrentPosition(
+      //     function (position) {
+      //       lat = position.coords.latitude;
+      //       let p = document.querySelector("p");
+      //       p.innerText = getSeason(lat, new Date().getMonth());
+      //     },
+      //     function (error) {
+      //       console.log(error);
+      //     }
+      //   );
+  </script>
+</body>
+
+</html>

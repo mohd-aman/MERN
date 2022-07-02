@@ -1,0 +1,30 @@
+<!-- Q- Create a panel which takes 2 inputs, a message and a time in seconds. And after those second
+  s display the message through a notification  -->
+
+<!-- Solution :  -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h3>Message</h3>
+    <input type="text" id="msg" />
+    <h3>Time (in Secs)</h3>
+    <input type="number" id="time" />
+    <button>Start</button>
+    <script>
+      let btn = document.querySelector("button");
+      let msg = document.querySelector("#msg");
+      let time = document.querySelector("#time");
+      btn.addEventListener("click", function () {
+        setTimeout(function () {
+          new Notification(msg.value);
+        }, Number(time.value) * 1000);
+      });
+    </script>
+  </body>
+</html> -->
