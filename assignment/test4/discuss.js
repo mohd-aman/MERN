@@ -68,3 +68,24 @@
 // console.log(p.public);
 
 // console.log(userObj.private);
+
+
+//symbol
+
+// let a = Symbol();
+// console.log(a);
+// let b= Symbol("ABC")
+// console.log(b);
+// console.log(b.description);
+// let c= Symbol("ABC");
+
+// let d = Symbol();
+// console.log(a == d);
+
+let a = {
+}
+
+a[ Symbol()] = 2
+a[ Symbol()] = 3;
+
+console.log(a[Symbol()]);
