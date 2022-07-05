@@ -82,10 +82,10 @@
 // let d = Symbol();
 // console.log(a == d);
 
-let a = {
-}
+// let a = {
+// }
 
-a[ Symbol()] = 2
-a[ Symbol()] = 3;
+// a[ Symbol()] = 2
+// a[ Symbol()] = 3;
 
-console.log(a[Symbol()]);
+// console.log(a[Symbol()]);
