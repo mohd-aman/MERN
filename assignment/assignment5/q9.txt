@@ -4,3 +4,6 @@ a) After loading the html
 b) Before loading the html
 c) After creating the dom tree 
 d) After parsing the css
+
+solution 
+d)
