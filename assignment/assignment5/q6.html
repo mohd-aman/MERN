@@ -20,6 +20,9 @@
       // Q - You are given a functional calculator. But its memory button does not work. Using localStorage save all the calculations and on click of memory button show them on screen
 
       //Given Code:
+        if(!localStorage.getItem("calculations")){
+          localStorage.setItem("calculations",JSON.stringify([]));
+        }
         let in1 = document.querySelector("#in1");
         let in2 = document.querySelector("#in2");
         let btns = document.querySelectorAll("button.operation");
@@ -29,20 +32,35 @@
             let v1 = Number(in1.value);
             let v2 = Number(in2.value);
             let p = document.querySelector("p");
+            let oldCals = JSON.parse(localStorage.getItem("calculations"));
             if (symbol == "+") {
               p.innerText = v1 + v2;
+              oldCals.push(`${v1} + ${v2} = ${v1+v2}`)
             } else if (symbol == "-") {
               p.innerText = v1 - v2;
+              oldCals.push(`${v1} - ${v2} = ${v1-v2}`)
             } else if (symbol == "*") {
               p.innerText = v1 * v2;
+              oldCals.push(`${v1}* ${v2} = ${v1*v2}`)
             } else if (symbol == "/") {
               p.innerText = v1 / v2;
+              oldCals.push(`${v1} / ${v2} = ${v1/v2}`)
             }
+            localStorage.setItem("calculations",JSON.stringify(oldCals))
           });
         }
 
-      //   Solution:
-
+        let memoBtn = document.querySelector("#memo");
+        let memoText = document.querySelector("#memo-text");
+        memoBtn.addEventListener("click",function(){
+          let arr = JSON.parse(localStorage.getItem("calculations"));
+          let s = ""
+          for(let i=0;i<arr.length;i++){
+            s+=arr[i];
+            s+="\n";
+          }
+          memoText.innerText = s;
+        })
     
     </script>
   </body>
