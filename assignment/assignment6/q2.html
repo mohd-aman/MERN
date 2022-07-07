@@ -42,10 +42,25 @@
     // This is a bug. On clicking of p tag it should only alert about itself. fix it
 
     //   Given Code:
-    let ps = document.querySelectorAll("p");
+    // let ps = document.querySelectorAll("p");
+    // let container = document.querySelector(".container");
+    // for (let i = 0; i < ps.length; i++) {
+    //   ps[i].addEventListener("click", function () {
+
+    //     alert("p tag was clicked");
+    //   });
+    // }
+
+    // container.addEventListener("click", function () {
+    //   alert("div tag was clicked");
+    // });
+
+      //   Solution:
+      let ps = document.querySelectorAll("p");
     let container = document.querySelector(".container");
     for (let i = 0; i < ps.length; i++) {
-      ps[i].addEventListener("click", function () {
+      ps[i].addEventListener("click", function (e) {
+        e.stopPropagation();
         alert("p tag was clicked");
       });
     }
@@ -53,8 +68,6 @@
     container.addEventListener("click", function () {
       alert("div tag was clicked");
     });
-
-      //   Solution:
 
   </script>
 </body>
