@@ -19,10 +19,41 @@
 </head>
 
 <body>
-  <canvas></canvas>
+  <canvas id="canvas">
+
+  </canvas>
   <script>
       // Q- Use canvas to create mouse selection as in windows -> box creation using canvas 
-     
+      let drag = false;
+      let rectStartX,rectStartY;
+
+      const canvas = document.getElementById('canvas');
+      const ctx = canvas.getContext('2d');
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      ctx.fillStyle = 'yellow';
+
+      document.addEventListener("mousedown",function(e){
+        drag = true;
+        rectStartX = e.clientX;
+        rectStartY = e.clientY;
+      });
+
+      document.addEventListener("mouseup",function(e){
+        drag = false;
+        rectStartX = undefined;
+        rectStartY = undefined;
+      })
+
+      document.addEventListener("mousemove",function(e){
+        let rectEndX = e.clientX;
+        let rectEndY = e.clientY;
+        if(drag && rectStartX && rectStartY){
+          ctx.clearRect(0,0,canvas.width,canvas.height)
+          ctx.fillRect(rectStartX,rectStartY,rectEndX-rectStartX,rectEndY-rectStartY);
+        }
+      })
+
   </script>
 </body>
 
