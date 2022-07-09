@@ -55,19 +55,47 @@
       //  which deletes direct parent of p tags and then it alerts "div tag was clicked".
 
       //   Given Code:
-      let ps = document.querySelectorAll("p");
-      let container = document.querySelector(".container");
-      for (let i = 0; i < ps.length; i++) {
-        ps[i].addEventListener("click", function () {
-          alert("p tag was clicked");
-        });
-      }
+      // let ps = document.querySelectorAll("p");
+      // let container = document.querySelector(".container");
+      // for (let i = 0; i < ps.length; i++) {
+      //   ps[i].addEventListener("click", function () {
+      //     alert("p tag was clicked");
+      //   });
+      // }
 
-      container.addEventListener("click", function () {
-        alert("div tag was clicked");
-      });
+      // container.addEventListener("click", function () {
+      //   alert("div tag was clicked");
+      // });
 
       //   Solution:
+
+      let ps = document.querySelectorAll("p");
+      let innerContainers = document.querySelectorAll(".inner-container")
+      let container = document.querySelector(".container")
+      for(let i=0;i<ps.length;i++){
+        ps[i].addEventListener("click",function(){
+          alert("p tag was clicked");
+        })
+      }
+
+      for(let i=0;i<innerContainers.length;i++){
+        innerContainers[i].addEventListener("click",function(e){
+          alert("parent of p was clicked");
+          let event = new Event("delete-event",{bubbles:false})
+          e.currentTarget.dispatchEvent(event);
+
+          innerContainers[i].addEventListener("delete-event",function(e){
+            e.currentTarget.remove();
+          })
+        })
+      }
+
+      container.addEventListener("click",function(){
+        alert("div tag was clicked");
+      })
+
+
+
 
     </script>
   </body>
