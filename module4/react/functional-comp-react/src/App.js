@@ -6,6 +6,7 @@ import Ue2 from './components/Ue2'
 import Ue3 from './components/Ue3';
 import Parent from './components/Context/Parent';
 import Test from './components/Context/Test'
+import ThemeChanger from './components/Context/ThemeChanger';
 
 
 function App() {
@@ -13,7 +14,8 @@ function App() {
     // <Counter/>
     // <Ue3/>
     // <Parent/>
-    <Test/>
+    // <Test/>
+    <ThemeChanger/>
   );
 }
 
