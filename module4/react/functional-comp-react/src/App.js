@@ -6,7 +6,8 @@ import Ue2 from './components/Ue2'
 import Ue3 from './components/Ue3';
 import Parent from './components/Context/Parent';
 import Test from './components/Context/Test'
-import ThemeChanger from './components/Context/ThemeChanger';
+import ContextNormal from './components/Context/ContextNormalvsMemo/ContextNormal';
+import ContextMemo from './components/Context/ContextNormalvsMemo/ContextMemo';
 
 
 function App() {
@@ -15,7 +16,8 @@ function App() {
     // <Ue3/>
     // <Parent/>
     // <Test/>
-    <ThemeChanger/>
+    // <ContextNormal/>
+    <ContextMemo/>
   );
 }
 

@@ -12,7 +12,7 @@ function Footer(){
 function FooterText(){
     let CTheme = useContext(ThemeContext);
     return(
-        <div className={CTheme == 'light'?'ligth':'dark'}>
+        <div className={CTheme == 'light'?'light':'dark'}>
             FooterText
         </div>
     )

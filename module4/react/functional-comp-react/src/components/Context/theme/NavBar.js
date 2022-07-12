@@ -1,6 +1,6 @@
 import { useContext } from "react"
 import "./theme.css"
-import {ThemeContext} from "./ThemeChanger"
+import {ThemeContext} from "../ThemeChanger"
 
 
 function NavBar(){
