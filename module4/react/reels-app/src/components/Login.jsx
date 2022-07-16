@@ -5,6 +5,9 @@ import {signInWithEmailAndPassword } from "firebase/auth";
 function Login(){
     const [email,setEmail] = useState("");
     const [password,setPassword] = useState("");
+    const [user,setUser] = useState(null);
+    const [loader,setLoader] = useState(false);
+    const [error,setError] = useState("");
 
     const trackEmail = function(e){
         setEmail(e.target.value);
@@ -16,17 +19,30 @@ function Login(){
 
     const printDetails = async function(){
         // alert(email + " " + password)
-        let userCred = await signInWithEmailAndPassword(auth,email,password)
-        console.log(userCred.user);
+        try{
+            setLoader(true);
+            let userCred = await signInWithEmailAndPassword(auth,email,password)
+            setUser(userCred.user)
+        }catch(err){
+            setError(err.message);
+            setTimeout(()=>{
+                setError("")
+            },2000)
+        }
+        setLoader(false);
     }
 
     return (
         <>
-            <input type="email" onChange={trackEmail}  placeholder="email" />
+        {error != "" ? <h1>Error is {error}</h1>:
+             loader == true?<h1>...Loading</h1>:
+                user != null ? <h1>User is {user.uid}</h1>:
+             <><input type="email" onChange={trackEmail}  placeholder="email" />
             <br></br>
             <input type="password" onChange={trackPassword} placeholder="password" />
             <br></br>
-            <button type="click" onClick={printDetails}>Login</button>
+            <button type="click" onClick={printDetails}>Login</button></>
+            }
         </>
     )
 }
