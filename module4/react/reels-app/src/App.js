@@ -1,5 +1,4 @@
 // npm install react-router-dom@5.3.1
-
 import './App.css';
 import Feed from "./components/Feed"
 import Login from "./components/Login"
@@ -22,7 +21,7 @@ function App() {
       <Route path="/profile">
        <Profile></Profile>
       </Route>
-      <Route >
+      <Route>
        <PageNotFound></PageNotFound>
       </Route>
     </Switch>
