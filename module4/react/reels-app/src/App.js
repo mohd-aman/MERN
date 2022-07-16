@@ -1,24 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+// npm install react-router-dom@5.3.1
 
+import './App.css';
+import Feed from "./components/Feed"
+import Login from "./components/Login"
+import PageNotFound from "./components/PageNotFound"
+import Profile from "./components/Profile"
+import Signup from "./components/Signup"
+import {Switch,Route} from "react-router-dom"
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Switch>
+      <Route path="/feed">
+       <Feed></Feed>
+      </Route>
+      <Route path="/login">
+       <Login></Login>
+      </Route>
+      <Route path="/signup">
+       <Signup></Signup>
+      </Route>
+      <Route path="/profile">
+       <Profile></Profile>
+      </Route>
+      <Route >
+       <PageNotFound></PageNotFound>
+      </Route>
+    </Switch>
   );
 }
 
