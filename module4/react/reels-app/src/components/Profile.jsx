@@ -25,7 +25,7 @@ function Profile(){
     return (
             <>
                 {loading == true?<div>...Loading</div>:    
-         <>
+            <>
          <div className="header"></div>
          <div className="main">
              <div className="pimg_container">
