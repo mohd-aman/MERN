@@ -15,12 +15,7 @@ function Profile(){
                 //read from dabase
                 const docRef = doc(db,"users",cUser.uid);
                 const docSnap = await getDoc(docRef);
-                console.log("Document Data: ",docSnap)
-                if(docSnap.exists()){
-                    console.log(docSnap.data());
-                }else{
-                    console.log("No data")
-                }
+                console.log("Document Data: ",docSnap.data())
             }
         })()
     },[cUser])
