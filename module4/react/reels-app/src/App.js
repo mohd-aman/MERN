@@ -18,18 +18,21 @@ function App() {
       {/* <Route path="/feed">
        <Feed></Feed>
       </Route> */}
-      <Route path="/login">
+      <RedirectToFeed path='/login' comp={Login}></RedirectToFeed>
+      {/* <Route path="/login">
        <Login></Login>
-      </Route>
-      <Route path="/signup">
+      </Route> */}
+      <RedirectToFeed path='/signup' comp ={Signup}></RedirectToFeed>
+      {/* <Route path="/signup">
        <Signup></Signup>
-      </Route>
+      </Route> */}
       <PrivateRoute path="/profile" comp = {Profile}>
 
       </PrivateRoute>
       {/* <Route path="/profile">
        <Profile></Profile>
       </Route> */}
+      <Redirect from='/' to='/feed'></Redirect>
       <Route>
        <PageNotFound></PageNotFound>
       </Route>
@@ -50,6 +53,24 @@ function PrivateRoute(props){
       }
     }
     ></Route>
+  )
+}
+
+function RedirectToFeed(props){
+  let Component = props.comp;
+  let cUser = useContext(AuthContext);
+  //cUser -> null -> login
+  //CUser not null Feed
+  return(
+  <Route 
+   {...props} 
+   render={
+    (props)=>{
+      return cUser!=null?<Redirect {...props} to="/feed"></Redirect>:
+      <Component {...props}></Component>
+    }
+   }
+   ></Route>
   )
 }
 
