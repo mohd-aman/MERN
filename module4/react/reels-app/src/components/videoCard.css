@@ -1,0 +1,38 @@
+.video-card{
+    height: 100%;
+    width: 35%;
+    margin: auto;
+    position: relative;
+}
+
+.video-card-username{
+    z-index:1;
+    position: absolute;
+    bottom: 10rem;
+    left: 20px;
+}
+
+.video-card-music{
+    z-index: 1;
+    font-weight: 800;
+    position: absolute;
+    bottom: 9rem;
+    left: 12px;
+}
+
+.video-card-comment-box{
+    height: 40%;
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+}
+
+
+.comment-form{
+    height: 10%;
+    display: flex;
+}
+
+.comment-form input{
+    width: 85%;
+}
