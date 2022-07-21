@@ -1,5 +1,6 @@
 import "./feed.css"
-import {auth} from "../firebase"
+import {auth, storage} from "../firebase"
+import {ref, uploadBytesResumable, getDownloadURL} from "firebase/storage"
 import VideoCard from "./VideoCard"
 function Feed(){
     return(
@@ -12,6 +13,33 @@ function Feed(){
             <button onClick={()=>{auth.signOut()}}>Logout</button>
             </div>
             <div className="main_container">
+                <input type="file" 
+                onClick={(e)=>{
+                    console.log(e)
+                }} 
+
+                onChange={(e)=>{
+                    let videoObj = e.currentTarget.files[0];
+                    console.log(videoObj)
+                    let {name,size,type} = videoObj
+                    type = type.split("/")[0];
+                    if(type!=="video"){
+                        alert("Please upload a video");
+                    }else{
+                        let storageRef = ref(storage,`posts/${name}`)
+                        const uploadTask = uploadBytesResumable(storageRef, videoObj);
+                        uploadTask.on("state_changed",null,null,()=>{
+                            getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+                                console.log('File available at', downloadURL);
+                              });  
+                        })
+                    }
+                }}
+                
+                ></input>
+
+
+
                 <div className="upload_container">
                     Upload
                 </div>
