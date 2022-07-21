@@ -62,9 +62,6 @@ function Feed() {
 
 
 
-                <div className="upload_container">
-                    Upload
-                </div>
                 <div className="reels_container">
                     <VideoCard />
                 </div>
