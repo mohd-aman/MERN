@@ -13,6 +13,7 @@ const VideoCard = (props) => {
     let [commentBoxOpen, setCommentBox] = useState(false);
     let [currUserComment, setCurrUserComment] = useState("");
     let [comments, setComments] = useState([]);
+    let [currUserLiked,SetCurrUserLiked] = useState(false);
     useEffect(async () => {
         let commentsIdArr = props.data.comments;
         let arr = [];
@@ -23,8 +24,13 @@ const VideoCard = (props) => {
         }
         console.log("Array ", arr)
         setComments(arr);
+        if (user) {
+            let a = props.data.likes.includes(user.uid);
+            SetCurrUserLiked(a)
+        }
     }, [props])
 
+    
     console.log("props", props)
     return (
         <div className="video-card">
@@ -42,6 +48,25 @@ const VideoCard = (props) => {
                     setCommentBox(true)
                 }
             }}>Chat</span>
+
+            <span
+                onClick={async () => {
+                    let likesArr = props.data.likes;
+                    if (currUserLiked) {
+                        likesArr = likesArr.filter((el) => el != user.uid);
+                    } else {
+                        likesArr.push(user.uid);
+                    }
+                    const postsRef = doc(db, "posts", props.data.id);
+                    await updateDoc(postsRef, {
+                        likes: likesArr
+                    });
+                    let c = !currUserLiked;
+                    SetCurrUserLiked(c);
+                }}
+            >
+                {currUserLiked ? "Liked" : "Do you like it?"}
+            </span>
 
             {commentBoxOpen ? (
                 <div className="video-card-comment-box">
