@@ -1,13 +1,27 @@
 import "./feed.css"
-import { auth, storage,db } from "../firebase"
+import { auth, storage, db } from "../firebase"
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage"
-import {setDoc,doc} from "firebase/firestore"
-import {useContext} from "react"
-import {AuthContext} from "../context/AuthContext"
+import { setDoc, doc, } from "firebase/firestore"
+import { useContext, useEffect } from "react"
+import { AuthContext } from "../context/AuthContext"
+import { collection, getDocs } from "firebase/firestore";
 
 import VideoCard from "./VideoCard"
+import { useState } from "react"
 function Feed() {
     let user = useContext(AuthContext);
+    let [posts, setPosts] = useState([]);
+    useEffect(async () => {
+        const querySnapshot = await getDocs(collection(db, "posts"));
+        let arr = [];
+        querySnapshot.forEach((doc) => {
+            // doc.data() is never undefined for query doc snapshots
+            console.log(doc.id, " => ", doc.data());
+            arr.push({id:doc.id,...doc.data()})
+        });
+        setPosts(arr);
+        console.log(posts);
+    }, [])
     return (
         <>
             <div className="header">
@@ -58,12 +72,12 @@ function Feed() {
                                     getDownloadURL(uploadTask.snapshot.ref).then(async (downloadURL) => {
                                         console.log('File available at', downloadURL);
                                         console.log(user);
-                                        await setDoc(doc(db, "posts", user.uid+`${name}`), {
-                                            email:user.email,
-                                            url:downloadURL,
-                                            likes:[],
-                                            comments:[]
-                                          });
+                                        await setDoc(doc(db, "posts", user.uid + `${name}`), {
+                                            email: user.email,
+                                            url: downloadURL,
+                                            likes: [],
+                                            comments: []
+                                        });
                                     });
                                 }
                             );
@@ -75,7 +89,10 @@ function Feed() {
 
 
                 <div className="reels_container">
-                    <VideoCard />
+                    {posts.map((post) => {
+                        return <VideoCard key={post.id} data={post} />
+                    })}
+
                 </div>
             </div>
         </>

@@ -1,9 +1,10 @@
 import { useState } from "react"
 import "./videoCard.css"
 
-const VideoCard = () => {
+const VideoCard = (props) => {
     let [playing, setPlaying] = useState(true);
     let [commentBoxOpen, setCommentBox] = useState(false);
+    console.log("props",props)
     return (
         <div className="video-card">
             <p className="video-card-username">Fake User</p>
@@ -46,7 +47,7 @@ const VideoCard = () => {
                     e.currentTarget.play();
                     setPlaying(true);
                 }
-            }} src="https://firebasestorage.googleapis.com/v0/b/class-demo-28b22.appspot.com/o/production%20ID_4678261.mp4?alt=media&token=43ab3b19-9238-4243-a1d8-1474001b9350"
+            }} src={props.data.url}
                 crossrigin="anonymous" ></video>
 
         </div>
