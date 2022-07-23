@@ -46,7 +46,7 @@ const VideoCard = () => {
                     e.currentTarget.play();
                     setPlaying(true);
                 }
-            }} src="https://firebasestorage.googleapis.com/v0/b/class-demo-28b22.appspot.com/o/production%20ID_4678261.mp4?alt=media&token=1e88c2b2-1603-44dc-b521-56241c88f990"
+            }} src="https://firebasestorage.googleapis.com/v0/b/class-demo-28b22.appspot.com/o/production%20ID_4678261.mp4?alt=media&token=43ab3b19-9238-4243-a1d8-1474001b9350"
                 crossrigin="anonymous" ></video>
 
         </div>

@@ -1,8 +1,13 @@
 import "./feed.css"
-import { auth, storage } from "../firebase"
+import { auth, storage,db } from "../firebase"
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage"
+import {setDoc,doc} from "firebase/firestore"
+import {useContext} from "react"
+import {AuthContext} from "../context/AuthContext"
+
 import VideoCard from "./VideoCard"
 function Feed() {
+    let user = useContext(AuthContext);
     return (
         <>
             <div className="header">
@@ -50,8 +55,15 @@ function Feed() {
                                 () => {
                                     // Handle successful uploads on complete
                                     // For instance, get the download URL: https://firebasestorage.googleapis.com/...
-                                    getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+                                    getDownloadURL(uploadTask.snapshot.ref).then(async (downloadURL) => {
                                         console.log('File available at', downloadURL);
+                                        console.log(user);
+                                        await setDoc(doc(db, "posts", user.uid+`${name}`), {
+                                            email:user.email,
+                                            url:downloadURL,
+                                            likes:[],
+                                            comments:[]
+                                          });
                                     });
                                 }
                             );
