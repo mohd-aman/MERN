@@ -4,3 +4,22 @@
     align-items: center;
     padding-top: 4rem;
 }
+
+.shopping-cart-home{
+    position: fixed;
+    bottom: 3rem;
+    right: 4rem;
+    height: 4rem;
+    width: 4rem;
+    border-radius: 50%;
+    border: none;
+    background:lightseagreen;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.shopping-cart-home span{
+    font-size: 2rem;
+    color: white;
+}
