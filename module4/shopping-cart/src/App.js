@@ -14,7 +14,7 @@ function App() {
         <Route path ='/cart'>
           <Cart/>
         </Route>
-        <Route path ='/preview'>
+        <Route path ='/preview/:id'>
           <Preview/>
         </Route>
         <Route path ='/'>
