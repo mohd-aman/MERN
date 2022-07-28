@@ -1,0 +1,44 @@
+.preview-container{
+    height: 85vh;
+    width: 100vw;
+    display: flex;
+    margin-top: 2rem;
+}
+
+.preview-img-container,
+.preview-listing{
+    height: 100%;
+    width: 50%;
+}
+
+.preview-img-container img{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+.preview-listing{
+    margin-right: 2rem;
+}
+
+.preview-listing h2{
+    margin-top: 4rem;
+    text-align: center;
+}
+
+.preview-listing p{
+    text-align: justify;
+    padding: 20px;
+}
+
+.preview-listing button{
+    display: block;
+    margin: auto;
+    padding: 10px 20px;
+    border: none;
+    outline:none;
+    border-radius: 10px;
+    color:white;
+    background-color: lightseagreen;
+    font-size: 1.25rem;
+}
