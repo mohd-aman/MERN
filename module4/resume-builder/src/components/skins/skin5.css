@@ -1,0 +1,124 @@
+.prev-header {
+    height: fit-content;
+    justify-content: space-between;
+    padding: 15px;
+}
+
+.details {
+    padding: 5px;
+    font-size: 10px;
+}
+
+.name {
+    width: fit-content;
+    display: flex;
+    
+}
+
+.fname {
+    font-size: 35px;
+    font-weight: bold;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.lname {
+    font-size: 35px;
+    font-weight: bold;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding-left: 10px;
+}
+
+.adress {
+    display: flex;
+}
+
+.summary {
+    width: 70%;
+}
+
+.profession {
+    font-size: 10px;
+    height: 25px;
+}
+
+.contacts {
+    display: flex;
+    justify-content: end;
+}
+
+.street,
+.city,
+.state,
+.country,
+.pin,
+.email,
+.phone {
+    font-size: 10px;
+    margin-right: 3px;
+}
+
+.course-detail,
+.edu-contact,
+.edu-end {
+    display: flex;
+}
+
+.course-detail{
+    font-size: 8px;
+}
+
+.education-details {
+    width: 70%;
+}
+
+.line1 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.degree,
+.college{
+    font-size: 9px;
+}
+
+.cgpa,
+.educationCity,
+.educationState,
+.graduationMonth,
+.graduationYear {
+    margin-right: 3px;
+    font-size: 9px;
+    padding-bottom: 4px;
+}
+
+
+.graduationMonth,
+.graduationYear {
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.cgpa {
+    font-size: 10px;
+}
+
+.heading {
+    width: calc(100wh);
+    height: 25px;
+    font-size: x-small;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+}
+
+.hsum{
+    display: flex;
+    justify-content: space-between;
+}
+
+.edu{
+    display: flex;
+    justify-content: space-between;
+}

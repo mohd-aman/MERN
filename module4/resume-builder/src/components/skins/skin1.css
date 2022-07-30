@@ -1,0 +1,145 @@
+.contact-details-skin1{
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    margin-top: 5%;
+}
+.contact-full-name{
+    font-size: x-large;
+    font-weight: bold;
+    color: rgb(21, 95, 165);
+
+
+}
+.email-phone{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+}
+.email-details{
+    margin-left: -4%;
+    font-size: small;
+}
+.phone-details{
+    margin-left: 7%;
+    font-size: small;
+}
+.address-details{
+    font-size: small;
+}
+.profession-details{
+    font-size: x-large;
+    font-weight: bolder;
+    color: black;
+
+}
+.professional-summary-skin1{
+    display: flex;
+    flex-direction: column;
+    margin-top: 4%;
+}
+.professional-summary-heading{
+    width: 90%;
+    text-align: center;
+    border-bottom: 2px solid rgb(85, 137, 185);
+    
+    margin-left: 5%;
+
+
+
+}
+.professional-summary-details{
+    font-size: small;
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 8px;
+}
+.education-details-skin1{
+    display: flex;
+    flex-direction: column;
+    margin-top: 4%;
+
+}
+.education-details-heading{
+    width: 90%;
+    text-align: center;
+    border-bottom: 2px solid rgb(85, 137, 185);
+    margin-left: 5%;
+
+}
+.education-details{
+    
+
+}
+.education-details-degree{
+    font-weight: bold;
+    font-size: small;
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 8px;
+
+}
+.education-details-name{
+    font-size: small;
+    width: 90%;
+    margin-left: 5%;font-weight: bold;
+    font-weight: 300;
+    text-align: justify;
+}
+
+.Skills-details-skin1{
+    display: flex;
+    flex-direction: column;
+    margin-top: 4%;
+
+}
+.skills-details-heading{
+    width: 90%;
+    text-align: center;
+    border-bottom: 2px solid rgb(85, 137, 185);
+    margin-left: 5%;
+
+}
+.skills-details{
+    font-weight: bolder;
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 8px;
+}
+.skills-details ul{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -13%;
+}
+.skills-details ul li{
+    margin-left: 8%;
+   
+}
+.projects-details-skin1{
+    display: flex;
+    flex-direction: column;
+    margin-top: 4%;
+
+}
+.projects-details-heading{
+    width: 90%;
+    text-align: center;
+    border-bottom: 2px solid rgb(85, 137, 185);
+    margin-left: 5%;
+
+}
+.projects-details{
+    font-weight: bolder;
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 8px;
+}
+.projects-details ul{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -13%;
+}
+.projects-details ul li{
+    margin-left: 8%;
+    
+}
