@@ -1,9 +1,9 @@
 
 
-const Templates = ()=>{
+const Template = ()=>{
     return(
-        <h1>Templates</h1>
+        <h1>Template</h1>
     )
 }
 
-export default Templates
+export default Template
