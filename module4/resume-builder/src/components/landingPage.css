@@ -1,0 +1,17 @@
+.landing-page{
+    text-align: center;
+    width: 50%;
+    margin: auto;
+}
+
+.landing-page .logo{
+    height: 400px;
+    width: 500px;
+    margin: auto; 
+}
+
+.landing-page .logo img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}

@@ -1,0 +1,17 @@
+.about{
+    display: flex;
+    margin-top: 50px;
+    justify-content: space-around;
+}
+
+.left-about{
+    margin: auto;
+}
+
+.right-about{
+    width: 40%;
+}
+
+.right-about img{
+    width: 100%;
+}
