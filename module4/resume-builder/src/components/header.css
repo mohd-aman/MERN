@@ -1,0 +1,51 @@
+.header{
+    height: 60px;
+    background-color: white;
+    box-shadow: 0 1px 2px 0 grey;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.header-logo, .header-logo img{
+    height: 100%;
+    object-fit: contain;
+}
+
+.header-links{
+    width: 50%;
+}
+
+.header-links ul{
+    display: flex;
+    background-color: white;
+    justify-content: space-around;
+}
+
+.header-links ul li{
+    list-style: none;
+}
+
+.header-links ul li a{
+    text-decoration: none;
+    color: black;
+}
+
+.header-links ul li a:hover{
+    color: red;
+}
+
+.btn {
+    background-color: transparent;
+    border: 2px solid red;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.btn:hover{
+    border:none;
+    background-color: red;
+    color: white;
+    border-radius: 5px;
+    padding: 5px;
+    cursor: pointer;
+}
