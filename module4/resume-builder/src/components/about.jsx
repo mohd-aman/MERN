@@ -13,7 +13,7 @@ const About = ()=>{
                 <img src={about} alt="" />
             </div>
         </div>
-    )
+    )    
 }
 
 export default About
