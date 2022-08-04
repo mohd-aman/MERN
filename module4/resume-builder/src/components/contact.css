@@ -46,3 +46,8 @@
 .full{
     width: 95%;
 }
+
+.next, .back{
+    text-align: center;
+    text-decoration: none;
+}

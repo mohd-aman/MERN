@@ -2,8 +2,9 @@ import Preview from "./preview"
 import "./contact.css"
 import { useSelector } from "react-redux"
 import { useState } from "react"
+import {Link} from "react-router-dom"
 
-function Contact(props){
+function Contact(){
     const [contact,setContact] = useState({})
     
     const onChange = (event)=>{
@@ -63,11 +64,11 @@ function Contact(props){
                         <label htmlFor="">Pin Code</label>
                         <input type="text" id="pin" value={getFieldData("pin")} onChange={onChange}/>
                     </div>
-                    <div className="next full">
-                        <div className="btn">Back</div>
+                    <div className="next btn full">
+                        <Link to="/template">Back</Link>
                    </div>
-                   <div className="back full">
-                        <div className="btn">Next</div>
+                   <div className="back btn full">
+                        <Link to="/education">Next</Link>
                    </div>
                 </div>
             </div>
