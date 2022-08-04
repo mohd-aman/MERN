@@ -23,11 +23,10 @@
 .template{
     height: 280px;
     width:250px;
-    background-color: black;
     position: relative;
 }
 
-template img{
+.template img{
     height: 100%;
     width: 100%;
 }
@@ -37,4 +36,5 @@ template img{
     color: white;
     border-radius: 5px;
     border:1px solid white;
+    /* position: absolute; */
 }
