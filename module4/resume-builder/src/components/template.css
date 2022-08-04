@@ -3,7 +3,6 @@
     flex-direction: column;
     align-items: center;
     margin: 50px;
-    height: 500px;
     justify-content: space-around;
 }
 
@@ -18,12 +17,15 @@
     display: flex;
     justify-content: space-around;
     width: 90%;
+    flex-wrap: wrap;
 }
 
 .template{
     height: 280px;
     width:250px;
     position: relative;
+    margin: 10px;
+    border: 1px solid black;
 }
 
 .template img{
@@ -31,10 +33,16 @@
     width: 100%;
 }
 
+.template img:hover{
+    opacity: 0.6;
+}
+
 .template-btn{
     background-color: red;
     color: white;
     border-radius: 5px;
     border:1px solid white;
-    /* position: absolute; */
+    position: absolute;
+    top:50%;
+    left:25%
 }
