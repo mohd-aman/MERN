@@ -42,7 +42,7 @@ const Skin2 = () => {
       <div className="contact-details-skin2">
         <div className="contact-details-name-s2">
           <div className="contact-details-logo-s2">
-            {fname.charAt(0)} {lname.charAt(0)}
+            {fname!=undefined?fname.charAt(0):""} {lname == undefined?"":lname.charAt(0)}
           </div>
           <div className="contact-details-fullName-s2">
             {fname} {lname}{" "}
