@@ -1,6 +1,8 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import './skin5.css'
-const Skin5 = (props) => {    
+const Skin5 = () => {
+    let props = useSelector((state)=>state);    
     let {
         fname,
         lname,
@@ -13,7 +15,7 @@ const Skin5 = (props) => {
         state,
         country,
         pin,
-    } = props.contact;
+    } = props.contactReducer;
 
 
     let { cgpa,
@@ -22,7 +24,7 @@ const Skin5 = (props) => {
          degree, collegeName, 
          graduationMonth, 
          graduationYear,
-         } = props.education;
+         } = props.educationReducer;
 
     return (
         <React.Fragment>

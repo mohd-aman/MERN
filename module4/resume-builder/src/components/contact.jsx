@@ -15,7 +15,7 @@ function Contact(){
     const onChange = (event)=>{
         let key = event.target.id;
         let value = event.target.value;
-        // setContact({...contact,[key]:value})
+        // setContact({...contact,[key]:value})        
         let newContact = {...contact,[key]:value};
         dispatch(addContactCreator(newContact))
     }

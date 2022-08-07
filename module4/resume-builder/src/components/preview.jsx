@@ -1,22 +1,13 @@
-import { useSelector } from "react-redux"
-
+import Skin1 from "./skins/skin1";
+import Skin2 from "./skins/skin2"
+import Skin5 from "./skins/skin5";
 
 function Preview(){
-    let state = useSelector((state)=>state);
-    let contact = state.contactReducer;
-    console.log("preview",contact)
     return(
         <>
-        <div>{contact.fname}</div>
-        <div>{contact.lname}</div>
-        <div>{contact.email}</div>
-        <div>{contact.summary}</div>
-        <div>{contact.phone}</div>
-        <div>{contact.prof}</div>
-        <div>{contact.street}</div>
-        <div>{contact.state}</div>
-        <div>{contact.city}</div>
-        <div>{contact.pin}</div>
+        <Skin1></Skin1>
+        {/* <Skin2></Skin2>*/}
+        {/* <Skin5></Skin5> */}
         </>
     )
 }
