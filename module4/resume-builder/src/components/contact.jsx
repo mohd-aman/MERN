@@ -1,16 +1,23 @@
 import Preview from "./preview"
 import "./contact.css"
-import { useSelector } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import { useState } from "react"
 import {Link} from "react-router-dom"
+import { addContactCreator } from "../redux/action"
 
 function Contact(){
-    const [contact,setContact] = useState({})
-    
+    let state = useSelector((state)=>state);
+    let dispatch = useDispatch();
+    // console.log(state);
+    // let [contact,setContact] = useState({})
+    let contact = state.contactReducer;
+    console.log(contact);
     const onChange = (event)=>{
         let key = event.target.id;
         let value = event.target.value;
-        setContact({...contact,[key]:value})
+        // setContact({...contact,[key]:value})
+        let newContact = {...contact,[key]:value};
+        dispatch(addContactCreator(newContact))
     }
 
     const getFieldData = (key)=>{
@@ -41,10 +48,10 @@ function Contact(){
                     </div>
                     <div className="input-group">
                         <label htmlFor="">Email</label>
-                        <input type="text" id="email" value={getFieldData("fname")} onChange={onChange}/>
+                        <input type="text" id="email" value={getFieldData("email")} onChange={onChange}/>
                     </div><div className="input-group">
                         <label htmlFor="">Phone</label>
-                        <input type="text" id="phone" value={getFieldData("fname")} onChange={onChange}/>
+                        <input type="text" id="phone" value={getFieldData("phone")} onChange={onChange}/>
                     </div><div className="input-group">
                         <label htmlFor="">Professional</label>
                         <input type="text" id="prof" value={getFieldData("prof")} onChange={onChange}/>
