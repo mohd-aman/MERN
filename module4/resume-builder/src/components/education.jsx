@@ -62,7 +62,7 @@ function Education(){
                         <Link to="/contact">Back</Link>
                    </div>
                    <div className="back btn full">
-                        <Link to="/">Next</Link>
+                        <Link to="/finalize">Next</Link>
                    </div>
                 </div>
             </div>

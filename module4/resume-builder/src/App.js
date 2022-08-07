@@ -7,6 +7,7 @@ import Template from "./components/template";
 import { Route, Switch } from "react-router-dom";
 import Contact from "./components/contact";
 import Education from "./components/education";
+import Finalize from "./components/finalize";
 
 
 function App() {
@@ -34,6 +35,9 @@ function App() {
       </Route>
       <Route path="/education" exact>
         <Education></Education>
+      </Route>
+      <Route path="/finalize" exact>
+        <Finalize></Finalize>
       </Route>
     </Switch>
     </>

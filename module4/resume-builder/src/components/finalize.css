@@ -1,0 +1,10 @@
+.finalize{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+}
+
+.finalize-preview{
+    box-shadow: 0 2px 9px lightgrey;
+    width: 50%;
+}

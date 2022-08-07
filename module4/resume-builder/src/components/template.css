@@ -38,7 +38,8 @@
 }
 
 .template-btn{
-    background-color: red;
+    height: 35px;
+    background-color: seagreen;
     color: white;
     border-radius: 5px;
     border:1px solid white;
