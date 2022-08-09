@@ -11,8 +11,9 @@
 
 .download-options{
     height: 400px;
-    width: 8%;
+    width: 5%;
     display: flex;
+    margin-top: 10%;
     flex-direction: column;
     justify-content:space-evenly;
     align-items:center;

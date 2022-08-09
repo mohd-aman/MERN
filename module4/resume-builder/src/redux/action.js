@@ -19,3 +19,9 @@ export const addEducationCreator = (value)=>{
         education:value
     }
 }
+
+export const logoutCreator = ()=>{
+    return{
+        type:"LOGOUT"
+    }
+}
