@@ -71,11 +71,11 @@ function Contact(){
                         <label htmlFor="">Pin Code</label>
                         <input type="text" id="pin" value={getFieldData("pin")} onChange={onChange}/>
                     </div>
-                    <div className="back-next 
+                    <div className="back-next btn-full
                     btn full">
                         <Link to="/template" className="back">Back</Link>
                    </div>
-                   <div className="btn full">
+                   <div className="btn-full btn full">
                         <Link to="/education" className="back">Next</Link>
                    </div>
                 </div>

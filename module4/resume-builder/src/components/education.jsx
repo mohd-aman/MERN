@@ -58,10 +58,10 @@ function Education(){
                         <label htmlFor="">Graduation Year</label>
                         <input type="text" id="graduationYear"  value={getFieldData("graduationYear")} onChange={onChange}/>
                    </div>
-                   <div className="back-next btn full">
+                   <div className="btn-full back-next btn full">
                         <Link to="/contact" className="back">Back</Link>
                    </div>
-                   <div className="btn full">
+                   <div className="btn-full btn full">
                         <Link to="/finalize" className="back">Next</Link>
                    </div>
                 </div>
