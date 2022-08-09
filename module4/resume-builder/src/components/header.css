@@ -36,14 +36,15 @@
 
 .btn {
     background-color: transparent;
-    border: 2px solid red;
+    border: 2px solid seagreen;
     border-radius: 5px;
     padding: 5px;
+    
 }
 
 .btn:hover{
     border:2px solid white;
-    background-color: red;
+    background-color: seagreen;
     color: white;
     border-radius: 5px;
     padding: 5px;
