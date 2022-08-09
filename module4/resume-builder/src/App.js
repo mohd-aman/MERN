@@ -1,7 +1,6 @@
 import Header from "./components/header";
 import About from "./components/about";
 import LandingPage from "./components/landingPage";
-import Register from "./components/register";
 import Signin from "./components/signin";
 import Template from "./components/template";
 import { Route, Switch } from "react-router-dom";
@@ -25,7 +24,7 @@ function App() {
      <Route path="/about" exact>
         <About></About>
       </Route>
-      <Route path="/register" exact component={auth.isAuth? LandingPage:Register}></Route>
+      <Route path="/register" exact component={auth.isAuth? LandingPage:Signin}></Route>
       <Route path="/signin" exact component={auth.isAuth? LandingPage:Signin}></Route>
       <Route path="/contact" exact component={auth.isAuth?Contact:Signin}></Route>
       <Route path="/education" exact component={auth.isAuth?Education:Signin}></Route>
