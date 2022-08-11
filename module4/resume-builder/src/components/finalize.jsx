@@ -50,6 +50,7 @@ function Finalize(){
                 </div>
                 <div className="save-btn">
                     <button className="btn">Save to Database</button>
+                    {/* Homework add this button functionality */}
                 </div>
             </div>
             <div className="final-templates">
