@@ -5,10 +5,17 @@ const express = require("express")
 
 const app = express();
 
-app.get("/",function(req,res){
+//get karna hai data from sayHello
+app.get("/sayHello",function(req,res){
     res.send("Hello from server");
 })
 
+//get kana hai data from sayBye
+app.get("/sayBye",function(req,res){
+    res.send("Bye");
+})
+
+// 3000 - address of a server -> on a given machine
 app.listen(3000,function(){
     console.log("server started at port 3000")
 })
