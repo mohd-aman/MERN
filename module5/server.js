@@ -3,16 +3,53 @@ const express = require("express")
 // you have to write it -> app signifies -> your server
 
 const app = express();
+
+
 app.use(express.json());
+
+let user;
+
 app.get("/",function(req,res){
     res.end("Homepage");
 })
 
 //get karna hai data from sayHello
 app.get("/sayHello",function(req,res){
-    res.end("Hello from server");
+    res.json({
+        user:user
+    })
 })
 
+//post
+app.post("/sayHello",function(req,res){
+    user = req.body;
+    res.json({
+        message:"Data recieved Successfully",
+        user:user
+    })
+})
+
+//patch
+app.patch("/sayHello",function(req,res){
+    dataToUpdate = req.body;
+
+    for(key in dataToUpdate){
+        user[key] = dataToUpdate[key];
+    }
+    res.json({
+        message:"Data updated",
+        user:user
+    })
+})
+
+//delete
+app.delete("/sayHello",function(req,res){
+    user = {};
+    res.json({
+        message:"Deletion done",
+        user:user
+    })
+})
 
 app.get("/getMultiply/:num1/:num2",function(req,res){
     console.log(req.params);
