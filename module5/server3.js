@@ -17,7 +17,7 @@ app.post("/simple",function(req,res,next){
 
 app.post("/simple",function(req,res){
     console.log("data",req.body);
-    res.send("Hello from Post 2");
+    res.status(200).send("Hello from Post 2");
 })
 
 
