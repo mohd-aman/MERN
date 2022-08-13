@@ -1,0 +1,13 @@
+# Code Execution -> as soon res.end line is executed there is no furthere execution of lower handler function
+    even if they satisfies all the condition
+
+# Res: when a request is send then it will execute all the route handleres serially
+
+# Next: sends request to the handler below it 
+
+*** if *** request hits your handler    
+            use -> it will always execute the function
+            get -> route + get method then it will execute the fxn
+            post -> route+ post method then it will execute the fxn
+            patch -> route+ patch method then it will execute the fxn
+            delete -> route+ delete method then it will execute the fxn
