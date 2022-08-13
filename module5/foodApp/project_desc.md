@@ -1,24 +1,24 @@
 # Meals Plans Delivery Website -> EatFit Clone
 
-## Pagese
+## Pages
     Home:
-        *majorly static
-        *top 3 plans
+        * majorly static
+        * top 3 plans
         top 3 reviews
     User:
-        *Login Page
-        *Signup Page
-        *ForgetPassword
-        *Reset Password
-        *Profile Page
+        * Login Page
+        * Signup Page
+        * ForgetPassword
+        * Reset Password
+        * Profile Page
             -> user Details:Email,Name,img
-            ->Booked plans
+            -> Booked plans
     Plans:
-        *All Plans
-        *Plan Details
+        * All Plans
+        * Plan Details
             -> Description
             -> Buy now button
-            ->Reviews
+            -> Reviews
 
 ## Backend Architecture -> MVC , Rest
 
@@ -27,8 +27,8 @@
 ## Authentication : Json web token
 
 ## 3rd Party:
-    *Payment Gateway : Razorpay
-    *Email :nodemailer
+    * Payment Gateway : Razorpay
+    * Email :nodemailer
 
 ## Testing : Postman
 
