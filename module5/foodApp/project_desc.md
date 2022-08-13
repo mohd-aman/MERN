@@ -4,7 +4,7 @@
     Home:
         * majorly static
         * top 3 plans
-        top 3 reviews
+        * top 3 reviews
     User:
         * Login Page
         * Signup Page
