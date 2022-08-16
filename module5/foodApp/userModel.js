@@ -17,25 +17,33 @@ mongoose.connect(dbLink).then(function(){
 let userSchema = new Schema({
     name:{
         type:String,
-        required:true
+        required:[true,"Name is not given. Please provide a name"]
     },
     password:{
         type:String,
-        required:true
+        required:[true,"Password is missing"]
     },
     confirmPassword:{
         type:String,
-        required:true
+        required:[true,"Confirm Password is Missing"],
+        //custom validator
+        validate:{
+            validator:function(){
+                return this.password == this.confirmPassword;
+            },
+            //error message
+            message:"Password mismatch"
+        }
     },
     email:{
         type:String,
-        required:true,
+        required:[true,'email is missing'],
         unique:true
     },
     phoneNumber:{
         type:String,
-        minLength:10,
-        maxLength:10
+        minLength:[10,"less than 10 numbers"],
+        maxLength:[10,"more than 10 numbers"]
     },
     pic:{
         type:String,
