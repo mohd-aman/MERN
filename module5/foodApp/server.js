@@ -67,6 +67,42 @@ app.post("/login",async function(req,res){
     }
 })
 
+app.patch("/forgetPassword",async function(req,res){
+    try{
+        let {email} = req.body;
+        let otp = otpGenerator();
+        let user = await userModel.findOneAndUpdate({email:email},{otp:otp},{new:true});
+        console.log(user);
+        res.json({
+            data:user,
+            "message":"Otp send to your mail"
+        })
+    }catch(err){
+        res.send(err.message);
+    }
+})
+
+app.patch("/resetPassword", async function(req,res){
+    try{
+        let {otp,password,confirmPassword} = req.body;
+        let user = await userModel.findOneAndUpdate({otp},{password,confirmPassword},{
+            runValidators:true,new:true
+        });
+        console.log(user);
+        res.json({
+            data:user,
+            messaage:"Pasword for the user is reset"
+        })
+
+    }catch(err){
+        res.send(err.message)
+    }
+})
+
+function otpGenerator(){
+    return Math.floor(Math.random()*1000000);
+}
+
 app.get("/users", protectRoute,async function(req,res){
     try{
         let users = await userModel.find();
