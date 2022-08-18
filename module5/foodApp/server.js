@@ -67,10 +67,36 @@ app.post("/login",async function(req,res){
     }
 })
 
-app.get("/users",function(req,res){
-    console.log(req.cookies);
-    res.send("cookie read");
+app.get("/users", protectRoute,async function(req,res){
+    try{
+        let users = await userModel.find();
+        res.json(users);
+    }catch(err){
+        res.send(err.message);
+    }
+    // console.log(req.cookies);
+    
+    // res.send("cookie read");
+
 })
+
+function protectRoute(req,res,next){
+    try{
+        let cookies = req.cookies;
+        let JWT = cookies.JWT;
+        if(cookies.JWT){
+            const token = jwt.verify(JWT,secretKey);
+            console.log(token);
+            next();
+        }else{
+            res.send("You are not logged in. Kindly login");
+        }
+    }catch(err){
+        console.log(err);
+        res.send(err.message)
+    }
+    
+}
 
 app.listen(3000,function(){
     console.log("server started at 3000");
