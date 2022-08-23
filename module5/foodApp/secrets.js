@@ -1,1 +1,1 @@
-module.exports = "COQAUsxrDBXjJiMF"
+module.exports="COQAUsxrDBXjJiMF"
