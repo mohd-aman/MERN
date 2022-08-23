@@ -1,6 +1,7 @@
 const jwt = require("jsonwebtoken")
 const secretKey = "kjds5439jkfdsljfsop"
 const userModel = require("../model/userModel");
+const mailSender = require("../utilities/mailSender")
 
 
 async function signupController(req,res){
@@ -50,17 +51,24 @@ async function loginController(req,res){
 async function forgetPasswordController(req,res){
     try{
         let {email} = req.body;
-        let afterFiveMin = Date.now() + 1000*60*5;
-        let otp = otpGenerator();
-        //mail ke basis pr search
-        //by default-> findAndUpdate -> not updated send document
-        //new = true -> will get updated doc
-        let user = await userModel.findOneAndUpdate({email:email},{otp:otp,otpExpiry:afterFiveMin},{new:true});
-        console.log(user);
-        res.json({
-            data:user,
-            "message":"Otp send to your mail"
-        })
+        let user = await userModel.findOne({email});
+        if(user){
+            let otp = otpGenerator();
+            let afterFiveMin = Date.now() + 1000*60*5;
+            await mailSender(email,otp);
+            user.otp = otp;
+            user.otpExpiry = afterFiveMin;
+            await user.save();
+            res.json({
+                data:user,
+                "message":"Otp send to your mail"
+            })
+        }else{
+            res.json({
+                result:"user with this email does not exist"
+            })
+        }
+       
     }catch(err){
         res.send(err.message);
     }
