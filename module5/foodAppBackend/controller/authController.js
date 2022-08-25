@@ -10,10 +10,12 @@ async function signupController(req,res){
         let newUser =await userModel.create(data);
         console.log(newUser);
         res.json({
-            message:"data recieved",
+            result:"data recieved",
         })}
     catch(err){
-        res.send(err.message)
+        res.status(500).json({
+            result:err.message
+        })
     }
 }
 
