@@ -18,8 +18,10 @@ function Login() {
     const handleLogin = async () => {
         try {
             // console.log(email,password)
-            await login(email, password)
-            history.push("/")
+            let flag = await login(email, password)
+            if(flag){
+                history.push("/")
+            }
           } catch(err) {
             console.log(err);
           }
