@@ -13,11 +13,11 @@ function PlanDetail() {
     const [rate, setrate] = useState();
     const { user } = useAuth();
     useEffect(async () => {
-        const data = await axios.get(`/api/plans/${id}`)
-        console.log(data.data.data);
-        delete data.data.data["_id"]
-        delete data.data.data["__v"]
-        setplan(data.data.data)
+        const data = await axios.get(`/api/v1/plan/${id}`)
+        console.log(data.data.plan);
+        delete data.data.plan["_id"]
+        delete data.data.plan["__v"]
+        setplan(data.data.plan)
         const reviews = await axios.get("/api/getReview/" + id);
         setarr(reviews.data.reviews)
         console.log(arr);

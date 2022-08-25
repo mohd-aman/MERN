@@ -11,10 +11,6 @@ async function getAllPlansController(req,res){
     }
 }
 
-async function getPlanController(req,res){
-
-}
-
 async function createPlanController(req,res){
     try{
         let data = req.body;
@@ -30,12 +26,59 @@ async function createPlanController(req,res){
     }
 }
 
-async function updatePlanController(req,res){
+async function getPlanController(req,res){
+    try{
+        let id = req.params.planRoutes;
+        let plan = await foodPlanModel.findById(id);
+        res.status(200).json({
+            result:"plan found",
+            plan:plan
+        })
+    }catch(err){
+        console.log(err);
+        res.json(500).json({
+            err:err.message
+        })
+    }
+}
 
+async function updatePlanController(req,res){
+    try{
+        let data = req.body;
+        let id = req.params.planRoutes;
+        const plan = await foodPlanModel.findById(id);
+        for(let key in data){
+            plan[key] = data[key];
+        }
+
+        await plan.save();
+        
+        res.status(200).json({
+            result:"plan update",
+            plan
+        })
+    }catch(err){
+        console.log(err);
+        res.json(500).json({
+            err:err.message
+        })
+    }
 }
 
 async function deletePlanController(req,res){
-
+    try{
+        let id = req.params.planRoutes;
+        let plan = await foodPlanModel.findByIdAndDelete(id);
+        res.status(200).json({
+            result:"plan deleted",
+            plan:plan
+        })
+    }catch(err){
+        console.log(err);
+        res.json(500).json({
+            err:err.message
+        })
+    }
 }
 
 module.exports = {

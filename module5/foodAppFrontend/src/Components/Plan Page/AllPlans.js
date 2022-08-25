@@ -8,9 +8,9 @@ function AllPlans() {
     const [arr, arrset] = useState([]);
     useEffect(async () => {
         try {
-            const data = await axios.get("/api/plans?page=1&&limit=3");
-            console.log(data.data);
-            arrset(data.data.data);
+            const data = await axios.get("/api/v1/plan");
+            console.log(data.data.AllPlans);
+            arrset(data.data.AllPlans);
         } catch (err) {
             console.log(err);
         }
@@ -31,7 +31,7 @@ function AllPlans() {
                                     <div className='price'>Rs {ele.price}</div>
                                     <div className="duration">/month</div>
                                 </div>
-                                <p className="point">That’s only 2₹ per meal</p>
+                                <p className="point">That’s only {Math.floor(ele.price/ele.duration)} per month</p>
                             </div>
 
                             <div className='pCard2'>
