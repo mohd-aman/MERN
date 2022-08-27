@@ -18,7 +18,7 @@ function PlanDetail() {
         delete data.data.plan["_id"]
         delete data.data.plan["__v"]
         setplan(data.data.plan)
-        const reviews = await axios.get("/api/getReview/" + id);
+        const reviews = await axios.get("/api/v1/review" + id);
         setarr(reviews.data.reviews)
         console.log(arr);
     }, [])
@@ -32,10 +32,10 @@ function PlanDetail() {
         const data = await axios.post("/api/reviews", {
             "review": review,
             "rating": rate,
-            "user": user.user._id,
+            "user": user._id,
             "plan": id
         })
-        const reviews = await axios.get("/api/getReview/" + id);
+        const reviews = await axios.get("/api/v1/review" + id);
         setarr(reviews.data.reviews);
     }
     const handleDelete = async() =>{
