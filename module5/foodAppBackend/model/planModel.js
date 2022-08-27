@@ -23,6 +23,13 @@ let planSchema = new mongoose.Schema({
             },
             message:"Discount must be than actual price"
         }
+    },
+    reviews:{
+        type:[mongoose.Schema.ObjectId],
+        ref:"foodReviewModel"
+    },
+    averageRating:{
+        type:Number
     }
 })
 
