@@ -5,17 +5,17 @@ import axios from 'axios';
 
 function Profile() {
     const { user } = useAuth();
-    const [password, passwordSet] = useState(user.user.password)
-    const [passwordCnf, passwordCnfSet] = useState(user.user.password)
-    const [email, emailSet] = useState(user.user.email);
-    const [name, nameSet] = useState(user.user.name);
+    const [password, passwordSet] = useState(user.password)
+    const [passwordCnf, passwordCnfSet] = useState(user.password)
+    const [email, emailSet] = useState(user.email);
+    const [name, nameSet] = useState(user.name);
     const nameEdit = async () => {
         await axios.patch('/api/users/login');
     }
     const handleClick = async () => {
         try {
             console.log(user.user._id);
-            const data = await axios.patch("/api/users/" + user.user._id,
+            const data = await axios.patch("/api/v1/user/profile" + user.user._id,
              { headers: { "Authorization": `Bearer ${user.token}` } }, {
                 email,
                 name,
@@ -37,7 +37,7 @@ function Profile() {
                     <h1 className='h1'>Profile</h1>\
                     <div className="line"></div>
                     <div className="profileImage">
-                        <img src={user.user.profileImage} />
+                        <img src={user.profileImage} />
                     </div>
                 </div>
                 <div className="loginBox">
