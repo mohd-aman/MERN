@@ -66,18 +66,18 @@ async function forgetPasswordController(req,res){
             user.otp = otp;
             user.otpExpiry = afterFiveMin;
             await user.save();
-            res.json({
+            res.status(204).json({
                 data:user,
                 "message":"Otp send to your mail"
             })
         }else{
-            res.json({
+            res.status(404).json({
                 result:"user with this email does not exist"
             })
         }
        
     }catch(err){
-        res.send(err.message);
+        res.status(500).send(err.message);
     }
 }
 
@@ -91,12 +91,12 @@ async function resetPasswordController(req,res){
             delete user.otp;
             delete user.otpExpiry;
             await user.save();
-            res.json({
+            res.status(200).json({
                 message:"OTP Expired"
             })
         }else{
             if(user.otp != otp){
-                res.json({
+                res.status(200).json({
                     message:"OTP does not match"
                 })
             }else{
@@ -105,7 +105,7 @@ async function resetPasswordController(req,res){
                 delete user.otpExpiry
                 await user.save();
 
-                res.json({
+                res.status(201).json({
                     user:user,
                     message:"user password reset complete"
                 })
@@ -115,7 +115,7 @@ async function resetPasswordController(req,res){
         //save this doc in db
 
     }catch(err){
-        res.send(err.message)
+        res.status(500).send(err.message)
     }
 }
 
