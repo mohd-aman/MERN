@@ -44,3 +44,8 @@
 
 ### Further improvement : videos, feedback, meal level
 
+
+
+publishable key -> pk_test_51LcWn2SEf8DOL01Hrj5IV2Hmob4mraCZ3BJggg3QsldILzDTKAruGLvPT5ScBvKWInzd1ceNexN7UEC9mvdl85Kh00Gkb8cDa8
+
+secret key -> sk_test_51LcWn2SEf8DOL01H3jLd7zwUXoxRsuxAaMy981QQvv0NAiZyYQGcyvEdyzgaXmPXMGLQbzZzlkdwKFrbZGrcWiQp005gGVd2hT
