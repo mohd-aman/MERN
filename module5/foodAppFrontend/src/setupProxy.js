@@ -5,7 +5,7 @@ module.exports = function (app) {
     app.use("/api",
         createProxyMiddleware({
             // server ke home page ka link
-            target: 'http://localhost:3000',
+            target: 'https://foodpep.herokuapp.com/',
             changeOrigin: true,
         })
     );
