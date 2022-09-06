@@ -60,7 +60,7 @@ showDetails = function(city,state){
 // showDetails.call(person2,"Noida","UP");
 
 //apply() method -> calls a fxn with a given "this" value and arguments are passed as an array.
-// HW polyfill of apply()
+
 // showDetails.apply(person2,["Noida","UP"]);
 
 //bind() method creates a new fxn with "this" value set to the provided value.
@@ -68,3 +68,4 @@ showDetails = function(city,state){
 let showDetailsBind = showDetails.bind(person2,"Noida","UP");
 
 showDetailsBind();
+// HW polyfill of bind()
