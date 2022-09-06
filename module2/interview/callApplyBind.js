@@ -69,3 +69,4 @@ let showDetailsBind = showDetails.bind(person2,"Noida","UP");
 
 showDetailsBind();
 // HW polyfill of bind()
+// create a private variable with the help of closure.
