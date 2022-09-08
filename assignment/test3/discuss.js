@@ -21,28 +21,51 @@
 
 
 //soln 7
-setTimeout(function () {
-    console.log(4);
-  });
-  setTimeout(function () {
-    console.log(5);
-  });
+// setTimeout(function () {
+//     console.log(4);
+//   });
+//   setTimeout(function () {
+//     console.log(5);
+//   });
   
-  let p = new Promise(function (resolve, reject) {
-    resolve();
-  });
+//   let p = new Promise(function (resolve, reject) {
+//     resolve();
+//   });
   
-  console.log(1);
+//   console.log(1);
   
-  p.then(function () {
-    console.log(2);
-  });
+//   p.then(function () {
+//     console.log(2);
+//   });
   
-  p.then(function () {
-    console.log(3);
-  });
+//   p.then(function () {
+//     console.log(3);
+//   });
   
-  setTimeout(function () {
-    console.log(6);
-  });
+//   setTimeout(function () {
+//     console.log(6);
+//   });
   
+// soln 4
+// let arr = [1,2,3];
+// console.log(arr);
+// console.log(arr.length);
+// console.log(arr[4]);
+// arr.length = 6
+// console.log(arr);
+// console.log(arr[4]);
+// ans is 1
+
+
+//soln2
+// (3)
+
+
+//soln3
+// (2);
+
+//soln 1
+// (3)
+// refer - https://flaviocopes.com/how-to-clone-javascript-object/
+
+//q5 similar to flatten an obj. (hw)
