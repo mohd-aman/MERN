@@ -1,9 +1,13 @@
-function f(num1,num2){
-    if(num1%2 == 0 && num1%num2 == 0){
-        return 0;
-    }else{
-        throw new Error("Incompatible types");
-    }
-}
+//soln 9
+// function f(num1,num2){
+//     if(num1%2 == 0 && num1%num2 == 0){
+//         return 0;
+//     }else{
+//         throw new Error("Incompatible types");
+//     }
+// }
 
-console.log(f(4,3));
+// console.log(f(4,3));
+
+//soln 6
+// 1
