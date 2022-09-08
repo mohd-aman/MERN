@@ -1,4 +1,6 @@
-//Q- Without changing the structure of the code move inputs of console statements so that the output ordering is in increasing rather than jumbled
+//Q- Without changing the structure of the code move inputs 
+//of console statements so that the output ordering is in 
+increasing rather than jumbled
 
 setTimeout(function () {
   console.log(1);

@@ -11,3 +11,38 @@
 
 //soln 6
 // 1
+
+
+//soln8 
+
+// let a = null
+// console.log(delete a); //false;
+// 4 is the correct ans
+
+
+//soln 7
+setTimeout(function () {
+    console.log(4);
+  });
+  setTimeout(function () {
+    console.log(5);
+  });
+  
+  let p = new Promise(function (resolve, reject) {
+    resolve();
+  });
+  
+  console.log(1);
+  
+  p.then(function () {
+    console.log(2);
+  });
+  
+  p.then(function () {
+    console.log(3);
+  });
+  
+  setTimeout(function () {
+    console.log(6);
+  });
+  
