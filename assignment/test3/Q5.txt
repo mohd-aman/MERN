@@ -1,2 +1,15 @@
 Q- Create a function which deep clones the object 
 
+let superClone = (object)=>{
+    let clonning = {};
+    Object.keys(object).map((prop)=>{
+        if(Array.isArray(object[prop])){
+            clonning[prop] = [].concat(object[prop]);
+        }else if(typeof object[prop] == "object"){
+            clonning[prop] = superClone(object[prop]);
+        }else{
+            clonning[prop] = object[prop];
+        }
+    })
+    return clonning;
+}

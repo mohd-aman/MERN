@@ -69,3 +69,35 @@
 // refer - https://flaviocopes.com/how-to-clone-javascript-object/
 
 //q5 similar to flatten an obj. (hw)
+
+//soln 5
+
+let superClone = (object)=>{
+    let clonning = {};
+    Object.keys(object).map((prop)=>{
+        if(Array.isArray(object[prop])){
+            clonning[prop] = [].concat(object[prop]);
+        }else if(typeof object[prop] == "object"){
+            clonning[prop] = superClone(object[prop]);
+        }else{
+            clonning[prop] = object[prop];
+        }
+    })
+    return clonning;
+}
+
+let obj = {
+    name:"Aman",
+    age:50,
+    innnerObj:{
+        a:1,
+        b:3
+    }
+}
+
+let cloneObj = superClone(obj);
+console.log(obj);
+console.log(cloneObj);
+cloneObj.innnerObj.b = 4;
+console.log(obj);
+console.log(cloneObj);
