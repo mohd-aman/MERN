@@ -1,0 +1,14 @@
+//  Q7 => Given the following two functions:
+         
+         const a = () => {};
+         function B() {}
+
+// What will be the values of each line in the following snippet:
+         typeof a; 
+         typeof B; 
+         Object.getPrototypeOf(a); 
+         Object.getPrototypeOf(B); 
+         a.prototype; 
+         B.prototype; 
+         a.__proto__;
+         B.__proto__;

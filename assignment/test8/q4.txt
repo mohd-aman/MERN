@@ -1,0 +1,29 @@
+// function currying
+
+// Q4 => Lets make some Curry ! 
+        //  You are given a specific function which performs a specific task !
+        // You are required to curry this function in two ways using bind and closure !
+
+// function dry(x,y){
+//     return x*y;
+// }
+
+
+// Solution
+
+// using bind
+// function dry(x,y){
+//      return x*y;
+// }
+// let curriedFun = dry.bind(this , 10);
+// console.log(curriedFun(20));
+
+
+//using closures
+// function dry(x){
+//     return function curry(y){
+//         return x*y;
+//     }
+// }
+// let curriedFun = dry(10);
+// console.log(curriedFun(20));

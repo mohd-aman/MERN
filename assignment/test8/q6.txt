@@ -1,0 +1,34 @@
+//Q6 Create objects in multiple ways.
+//    You are given a demo object create that object using multiple ways in javascript
+
+//    Avenger Object
+//    {
+//        name : "steve rogers",
+//        skills : ["marital arts","taekwondo"],
+//        place:"Queens",
+//        age:100
+//        fight : function(){
+//            console.log("Cap is fighting);
+//        }
+//    }
+
+   // Solution =>
+
+   // Function constructor
+   function Avenger(name , skills , place , age , fightFn){
+       this.name = name;
+       this.skills = skills,
+       this.place=place,
+       this.age=age
+       this.fight = fightFn
+   }
+   let cap = new Avenger("steve" , ["marital arts","taekwondo"] , "Queens", 100 , function(){
+    console.log("Cap is fighting");
+    });
+    console.log(cap);
+
+   // Factory Function
+
+   // Template literal
+
+   // Object.create 

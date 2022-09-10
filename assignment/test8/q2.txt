@@ -1,0 +1,41 @@
+// Prototypal Inheritence
+
+//Q2 => Call Me If You Can 
+
+//You are given various functions and object and you need to call function fun without actually invoking function fun
+
+//Dont's =>
+//fun();
+
+// Think of calling function fun from tony object
+
+
+function fun(){
+    console.log("Ahh You Got Me !!");
+}
+
+let arr = ["10" , "20" , "30" , "40"];
+
+arr.__proto__.__proto__ = fun;
+
+let steve = {
+    name : "Steve Rogers",
+    profession:"Captain America",
+    quote:"I Can Do This All Day !",
+    printMe : function(){
+        console.log("My Name is " + this.name +" and my favourite quote is " + this.quote );
+    }
+}
+steve.__proto__ = arr;
+
+let tony = {
+    name:"Tony Stark",
+    quote:"You want to have my property ? You can't have it !"
+}
+tony.__proto__ = steve;
+
+
+// Solution =>
+
+
+

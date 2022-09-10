@@ -1,0 +1,28 @@
+Q5 => Trick Or Treat
+      // Either you can be tricked or be treated
+      // trickOrTreat Method is called for you and you are getting tricked every time
+      // modify the treat function in such a way that you get treat always !
+
+// Code Starts Now =>
+
+surprise = "You are Tricked";
+let pumpkin = {
+    surprise : "Congratulations here are Turkish Delights for you !!",
+    trickOrTreat : function(){
+        console.log("Ready to be tricked or to be treated");
+       // Change below code 
+        function treat(){
+            console.log(this.surprise);
+        }
+        treat();
+       // Change above code
+    }
+}
+pumpkin.trickOrTreat();
+
+
+// Solution
+
+either change treat to arrow function
+or
+use bind method to bind treat to object pumpkin

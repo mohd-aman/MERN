@@ -1,0 +1,40 @@
+// import and export
+
+Q1. You are given a html file and there is a script.js file which is of type module.
+    This script.js file is using imports from a lib.js file. You need to implement lib.js file so that the way in which imports are 
+    done in script.js file works perfectly 
+
+# index.html file
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+</body>
+<script type="module" defer src="./script.js"></script>
+</html> 
+
+# script.js file
+import MCUVillain , { getInfinityStones , snapFinger } from "./lib.js";
+let thanos = new MCUVillain("thanos");
+getInfinityStones(thanos);
+snapFinger(thanos);
+#lib.js file
+// write your code here
+Hint -> lib.js file contains a class , and two functions namely getInfinityStones and snapFinger
+     -> Two types of exports are used in the lib.js file
+// solution
+lib.js file
+export default class MCUVillain{
+    constructor(name){
+        this.name = name;
+    }
+} 
+export function getInfinityStones(obj){
+    console.log(`${obj.name} got all the infinity stones !!`);
+}
+export function snapFinger(obj){
+    console.log(`${obj.name} snapped the fingerr !!`);
+}

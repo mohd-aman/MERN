@@ -1,0 +1,68 @@
+// Call , Apply , Bind
+
+// Q3) Inevitable Changes
+// Given snippets below change the functions and implement call , apply and bind methods
+
+// Implement call method below 
+let bucky = {
+    name : "bucky",
+    team : "Team Cap",
+    fight : function(){
+        console.log(`Hello avengers this is ${this.name} from ${this.team} lets fight !`);
+    }
+}
+let peter = {
+    name : "peter",
+    team: "Team Iron Man",
+    fight : function(){
+        console.log(`Hello avengers this is ${this.name} from ${this.team} lets fight !`);
+    }
+}
+bucky.fight();
+peter.fight();
+
+// Solution =>
+// let bucky = {
+//     name : "bucky",
+//     team : "Team Cap",
+// }
+// let fight = function(){
+//     console.log(`Hello avengers this is ${this.name} from ${this.team} lets fight !`);
+// }
+// let peter = {
+//     name : "peter",
+//     team: "Team Iron Man",
+// }
+// fight.call(bucky);
+// fight.call(peter);
+
+
+// Implement apply method below
+// There is a civil war happening between teamCap and teamIronMan , you need to use apply method and push both the teams in avengers array !
+let teamCap = ["Steve" , "Falcon" , "Bucky"];
+let teamIronMan = ["Iron Man" , "Spider Man" , "Rhodey"];
+let avengers = [];
+
+// Solution =>
+// avengers.push.apply(avengers , [ ...teamCap , ...teamIronMan ]);
+// console.log(avengers);
+
+
+// Implement bind method below
+// thanos has snapped the finger use bind method in such a way that now iron man should be able to snap the finger again !!
+let thanos = {
+    name:"THANOS",
+    snap : function(){
+        console.log(`${this.name} snapped the finger and half of the universe ${this.name == "THANOS" ? "disappeared" : "came back"}`);
+    }
+}
+let ironman = {
+    name:"IRON MAN"
+}
+thanos.snap();
+
+// Solution
+// let ironManSnap = thanos.snap.bind(ironman);
+// ironManSnap();
+
+
