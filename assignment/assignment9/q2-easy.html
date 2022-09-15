@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .balls {
+        margin-top: 4rem;
+        display: flex;
+        justify-content: space-evenly;
+      }
+      .ball {
+        height: 4rem;
+        width: 4rem;
+        border-radius: 50%;
+        border: none;
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="balls">
+      <div class="ball"></div>
+      <div class="ball"></div>
+      <div class="ball"></div>
+      <div class="ball"></div>
+      <div class="ball"></div>
+    </div>
+    <script>
+      // Q Make a loading animation using the above 5 balls and JS
+
+      // Solution:
+        let balls = document.querySelectorAll(".ball");
+
+        function load(index) {
+          index = index % 5;
+          console.log(index);
+          if (index != 0) balls[index - 1].style.opacity = 1;
+          else balls[balls.length - 1].style.opacity = 1;
+          balls[index].style.opacity = 0;
+          setTimeout(function () {
+            load(index + 1);
+          }, 200);
+        }
+
+        load(0);
+    </script>
+  </body>
+</html>

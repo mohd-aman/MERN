@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        padding-top: 5rem;
+      }
+
+      .red {
+        background-color: red;
+      }
+      .card {
+        border: 1px solid;
+        height: 10rem;
+        width: 10rem;
+        margin: 2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card"></div>
+      <div class="card"></div>
+      <div class="card"></div>
+      <div class="card"></div>
+      <div class="card"></div>
+      <div class="card red"></div>
+      <div class="card"></div>
+      <div class="card"></div>
+      <div class="card"></div>
+      <div class="card"></div>
+    </div>
+    <script>
+      //  Q Create a generic function to select all sibling of a given node. Using that function delete all siblings of red card
+
+      //   Solution:
+
+        // function getSibling(node) {
+        //   let arr = [];
+        //   let allChildren = node.parentElement.children;
+        //   for (let i = 0; i < allChildren.length; i++) {
+        //     if (allChildren[i] != node) arr.push(allChildren[i]);
+        //   }
+        //   return arr;
+        // }
+
+        // let redCard = document.querySelector(".red");
+        // let allSiblings = getSibling(redCard);
+        // for (let i = 0; i < allSiblings.length; i++) {
+        //   allSiblings[i].remove();
+        // }
+    </script>
+  </body>
+</html>

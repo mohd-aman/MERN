@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        display: flex;
+        flex-wrap: wrap;
+        padding-top: 5rem;
+      }
+
+      .card {
+        border: 1px dashed;
+        height: 10rem;
+        width: 10rem;
+      }
+
+      .solid {
+        border: 2px solid !important;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card solid"></div>
+    <div class="card solid"></div>
+    <div class="card solid"></div>
+    <div class="card solid"></div>
+    <div class="card solid"></div>
+    <div class="card solid"></div>
+    <div class="card solid"></div>
+    <div class="card solid"></div>
+    <div class="card solid"></div>
+    <div class="card"></div>
+    <script>
+      // Q
+      //   Write a script to do the following: Mouse leaving from a card (say A) and entering another card (say B). Destroy the card A by making its border dashed and in its place make another card with solid border which is not card A (say card C) and it should be dashed before.
+
+      //   Solution:
+
+        // let cards = document.querySelectorAll(".card");
+
+        // for (let i = 0; i < cards.length; i++) {
+        //   cards[i].addEventListener("mouseenter", function (e) {
+        //     if (e.relatedTarget.nodeName != "BODY") {
+        //       e.relatedTarget.classList.remove("solid");
+
+        //       let cardsCopy = document.querySelectorAll(".card");
+        //       for (let i = 0; i < cardsCopy.length; i++) {
+        //         if (
+        //           !cardsCopy[i].classList.contains("solid") &&
+        //           e.relatedTarget != cardsCopy[i]
+        //         ) {
+        //           cardsCopy[i].classList.add("solid");
+        //         }
+        //       }
+        //     }
+        //   });
+        // }
+    </script>
+  </body>
+</html>

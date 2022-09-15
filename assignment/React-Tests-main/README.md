@@ -297,7 +297,7 @@ Uncontrolled component In an uncontrolled component, the value of the input elem
 Input elements inside uncontrolled components work just like normal HTML input form elements.
 The state of the input element is handled by the DOM. Whenever the value of the input element is changed,event-based callbacks are not called. Basically, 
 react does not perform any action when there are changes made to the input element.
-Whenever use enters data inside the input field, the updated data is shown directly. To access the value of the input element, we can use ref.
+Whenever user enters data inside the input field, the updated data is shown directly. To access the value of the input element, we can use ref.
 Example of an uncontrolled component:
 ```
 class NameForm extends React.Component {

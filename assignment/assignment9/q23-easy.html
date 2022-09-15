@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      tr,
+      table,
+      td,
+      th {
+        border: 1px solid;
+        border-collapse: collapse;
+      }
+
+      td,
+      th {
+        padding: 1.5rem;
+      }
+
+      table {
+        margin: auto;
+        margin-top: 5rem;
+      }
+
+      th {
+        font-size: 1.5rem;
+        background: black;
+        color: white;
+      }
+
+      td {
+        font-size: 1.2rem;
+      }
+
+      form {
+        text-align: center;
+        margin-top: 5rem;
+      }
+      h1 {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>DATABASE</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>S. No.</th>
+          <th>Name</th>
+          <th>Marks</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Sameer</td>
+          <td>90</td>
+        </tr>
+
+        <tr>
+          <td>2</td>
+          <td>Rohan</td>
+          <td>100</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <form>
+      <label for="name"
+        >Name:
+        <input type="text" id="name" />
+      </label>
+      <label for="marks"
+        >Marks:
+        <input type="number" id="marks" />
+      </label>
+      <input type="submit" value="Submit" />
+    </form>
+    <script>
+      // Q Write a script which takes the entry from the form and add it into the table
+
+      //   Solution:
+
+        // let form = document.querySelector("form");
+        // form.addEventListener("submit", function (e) {
+        //   e.preventDefault();
+        //   let marks = document.querySelector("#marks").value;
+        //   let name = document.querySelector("#name").value;
+        //   let sNo = document.querySelectorAll("tbody tr").length + 1;
+        //   let tr = document.createElement("tr");
+        //   tr.innerHTML = `<td>${sNo}</td>
+        //     <td>${name}</td>
+        //     <td>${marks}</td>`;
+        //     let tbody = document.querySelector("tbody");
+        //     tbody.append(tr);
+        // });
+    </script>
+  </body>
+</html>

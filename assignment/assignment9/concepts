@@ -1,0 +1,34 @@
+METHODS
+-------
+querySelector
+querySelectorAll
+getElementById 
+createElement
+remove
+removeChild
+append
+insertBefore
+addEventListener
+getAttribute
+setAttribute
+scrollIntoView
+scrollBy
+getBoundingClientRect
+preventDefault
+cloneNode
+
+PROPERTIES 
+----------
+classList
+innerHTML
+value
+parentNode
+sibling Node 
+innerText
+style
+currentTarget
+currentTarget vs target 
+children
+relatedTarget
+nodeName
+
