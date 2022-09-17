@@ -77,50 +77,62 @@
 
 
 
-let a;
+// let a;
 
-console.log(a);
+// console.log(a);
 
-function A() {
-  let a = 2;
-  console.log(a);
+// function A() {
+//   let a = 2;
+//   console.log(a);
 
-  function C() {
-    console.log(a);
+//   function C() {
+//     console.log(a);
 
-    function D() {
-      console.log(a);
+//     function D() {
+//       console.log(a);
 
-      a = 2;
-    }
-    D();
-    a = 3;
-  }
-  C();
-}
+//       a = 2;
+//     }
+//     D();
+//     a = 3;
+//   }
+//   C();
+// }
 
-function B() {
-  let a;
-  console.log(a);
+// function B() {
+//   let a;
+//   console.log(a);
   
-  function E() {
-    a = 6;
-    console.log(a);
+//   function E() {
+//     a = 6;
+//     console.log(a);
     
-  }
+//   }
   
-  a = 2;
-  E();
-  console.log(a);
-}
+//   a = 2;
+//   E();
+//   console.log(a);
+// }
 
-function F() {
-  console.log(a);
-  a = 2;
-}
+// function F() {
+//   console.log(a);
+//   a = 2;
+// }
 
-a = 3;
+// a = 3;
 
-F();
-B();
-A();
+// F();
+// B();
+// A();
+
+
+
+// function fun(){
+//   for(let i = 0; i <= 5; i++){
+//       setTimeout(function(){
+//           console.log(i);
+//       }, i * 1000);
+//   }
+// }
+
+// fun();
